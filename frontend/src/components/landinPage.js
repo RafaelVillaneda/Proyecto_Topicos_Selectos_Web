@@ -2,7 +2,7 @@ import React from 'react'
 
 const landinPage = () => {
   return (
-<div className='container'>
+<div>
         
   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <div className="container-fluid">
@@ -23,7 +23,7 @@ const landinPage = () => {
             <a className="nav-link" href="#">Series</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Quieres unirte?</a>
+            <a className="nav-link" href='#'>Quieres unirte?</a>
           </li>
         </ul>
       </div>
