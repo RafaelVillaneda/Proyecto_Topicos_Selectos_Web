@@ -1,5 +1,9 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
+import logo_avatar from '../assets/logo_avatar.jpeg'
+import logo_starWars from '../assets/logo_StarWars.jpg'
+import logo_coraline from '../assets/coraline.jpg'
+import logo_castillo from '../assets/logo_castillo.jpg'
 const landinPage = () => {
   return (
 <div>
@@ -23,7 +27,7 @@ const landinPage = () => {
             <a className="nav-link" href="#">Series</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href='#'>Quieres unirte?</a>
+            <Link className="nav-link" to='/login'>Quieres unirte?</Link>
           </li>
         </ul>
       </div>
@@ -50,7 +54,7 @@ const landinPage = () => {
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         <div className="col">
           <div className="card h-100">
-            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" className="card-img-top" alt="..."/>
+            <img src={logo_avatar} className="card-img-top" alt="Error de carga de Imagen"/>
             <div className="card-body">
               <h5 className="card-title">Avatar</h5>
               <p className="card-text">Avatar es una franquicia de medios estadounidense creada por James Cameron,
@@ -65,7 +69,7 @@ const landinPage = () => {
 
         <div className="col">
           <div className="card h-100">
-            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" className="card-img-top" alt="..."/>
+            <img src={logo_starWars} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">Star Wars: episodio IV - una nueva esperanza</h5>
               <p className="card-text">La nave en la que viaja la princesa Leia es capturada por las tropas imperiales
@@ -79,7 +83,7 @@ const landinPage = () => {
 
         <div className="col">
           <div className="card h-100">
-            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" className="card-img-top" alt="..."/>
+            <img src={logo_coraline} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">Coraline</h5>
               <p className="card-text">Coraline Jones: es la protagonista de la película; es una niña rígida,
@@ -93,7 +97,7 @@ const landinPage = () => {
 
         <div className="col">
           <div className="card h-100">
-            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" className="card-img-top" alt="..."/>
+            <img src={logo_castillo} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">El increíble castillo vagabundo</h5>
               <p className="card-text">Sophie es una adolescente que trabaja en una tienda de sombreros en un pueblo como
