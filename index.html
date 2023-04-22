@@ -1,131 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <title>Guevana</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <title>Guevana</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Guevana!</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Películas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Series</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Quieres unirte?</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Guevana!</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Películas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Series</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalLogin">Quieres unirte?</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Cabecera de la página -->
-    <header class="bg-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-md-10 mx-auto">
-                    <div class="text-center">
-                        <h1 class="fw-bolder">Películas en alta definición</h1>
-                        <p class="lead mb-0">Las mejores películas en calidad HD. ¡Disfrútalas desde la comodidad de tu hogar!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="py-5">
-        <div class="container">
-          <h2 class="text-center mb-5">Películas populares</h2>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            <div class="col">
-              <div class="card h-100">
-                <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Avatar</h5>
-                  <p class="card-text">Avatar es una franquicia de medios estadounidense creada por James Cameron, 
-                    que consiste en una serie planificada de 
-                    películas épicas de ciencia ficción producidas por Lightstorm Entertainment y distribuidas por 20th Century Studios</p>
-                  <a href="#" class="btn btn-primary">Más información</a>
-                </div>
-              </div>
-            </div>
-            <!-- Se pueden agregar más tarjetas de películas aquí -->
-
-            <div class="col">
-                <div class="card h-100">
-                  <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Star Wars: episodio IV - una nueva esperanza</h5>
-                    <p class="card-text">La nave en la que viaja la princesa Leia es capturada por las tropas imperiales 
-                        al mando del temible Darth Vader. Antes de ser atrapada, 
-                        Leia consigue introducir un mensaje en su robot R2-D2, quien acompañado 
-                        de su inseparable C-3PO logra escapar.</p>
-                    <a href="#" class="btn btn-primary">Más información</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card h-100">
-                  <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Coraline</h5>
-                    <p class="card-text">Coraline Jones: es la protagonista de la película; es una niña rígida, 
-                        fuerte de carácter y clara al hablar. Tiene 11 años de edad. 
-                        ​ Se muda a una casa compartida por otras personas llamada 
-                        "El Palacio Rosa", junto a sus padres.</p>
-                    <a href="#" class="btn btn-primary">Más información</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="card h-100">
-                  <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">El increíble castillo vagabundo</h5>
-                    <p class="card-text">Sophie es una adolescente que trabaja en una tienda de sombreros en un pueblo como muchos, 
-                        pero su vida da un giro total cuando una bruja la transforma en una anciana.</p>
-                    <a href="#" class="btn btn-primary">Más información</a>
-                  </div>
-                </div>
-              </div>
-
+  <!-- Cabecera de la página -->
+  <header class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="text-center">
+            <h1 class="fw-bolder">Películas en alta definición</h1>
+            <p class="lead mb-0">Las mejores películas en calidad HD. ¡Disfrútalas desde la comodidad de tu hogar!</p>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </header>
 
-      <!-- Se pueden agregar más tarjetas de películas aquí -->
-
-      <footer class="bg-light py-3">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 text-center text-md-start">
-              <p>&copy; 2023 Mi sitio web. Todos los derechos reservados.</p>
-            </div>
-            <div class="col-md-6 text-center text-md-end">
-              <p>Desarrollado por <a href="https://github.com/RafaelVillaneda">Rafael Eulalio Villaneda de la torre</a></p>
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-5">Películas populares</h2>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Avatar</h5>
+              <p class="card-text">Avatar es una franquicia de medios estadounidense creada por James Cameron,
+                que consiste en una serie planificada de
+                películas épicas de ciencia ficción producidas por Lightstorm Entertainment y distribuidas por 20th
+                Century Studios</p>
+              <a href="#" class="btn btn-primary">Más información</a>
             </div>
           </div>
         </div>
-      </footer>
-      
-      
+        <!-- Se pueden agregar más tarjetas de películas aquí -->
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Star Wars: episodio IV - una nueva esperanza</h5>
+              <p class="card-text">La nave en la que viaja la princesa Leia es capturada por las tropas imperiales
+                al mando del temible Darth Vader. Antes de ser atrapada,
+                Leia consigue introducir un mensaje en su robot R2-D2, quien acompañado
+                de su inseparable C-3PO logra escapar.</p>
+              <a href="#" class="btn btn-primary">Más información</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Coraline</h5>
+              <p class="card-text">Coraline Jones: es la protagonista de la película; es una niña rígida,
+                fuerte de carácter y clara al hablar. Tiene 11 años de edad.
+                ​ Se muda a una casa compartida por otras personas llamada
+                "El Palacio Rosa", junto a sus padres.</p>
+              <a href="#" class="btn btn-primary">Más información</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card h-100">
+            <img src="https://via.placeholder.com/300x450.png?text=Movie+Poster" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">El increíble castillo vagabundo</h5>
+              <p class="card-text">Sophie es una adolescente que trabaja en una tienda de sombreros en un pueblo como
+                muchos,
+                pero su vida da un giro total cuando una bruja la transforma en una anciana.</p>
+              <a href="#" class="btn btn-primary">Más información</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Se pueden agregar más tarjetas de películas aquí -->
+
+  <footer class="bg-light py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start">
+          <p>&copy; 2023 Mi sitio web. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p>Desarrollado por <a href="https://github.com/RafaelVillaneda">Rafael Eulalio Villaneda de la torre</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Modal Login -->
+  <!-- Modal -->
+  <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </body>
+
 </html>

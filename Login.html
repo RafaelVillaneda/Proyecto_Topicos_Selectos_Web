@@ -1,81 +1,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login con registro en Bootstrap 5</title>
-	<!-- Enlaza los archivos CSS de Bootstrap 5 -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css">
+	<title>Login con registro con Bootstrap 5</title>
 </head>
+
+<div class="form">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#signup" role="tab" data-toggle="tab">Sign Up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#login" role="tab" data-toggle="tab">Log In</a>
+          </li>
+        </ul>
+        
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade show active" id="signup">   
+            <h1 class="text-center">Sign Up for Free</h1>
+            
+            <form action="/" method="post">
+            
+              <div class="form-group">
+                <label for="firstname">First Name<span class="req">*</span></label>
+                <input type="text" id="firstname" class="form-control" required autocomplete="off" />
+              </div>
+          
+              <div class="form-group">
+                <label for="lastname">Last Name<span class="req">*</span></label>
+                <input type="text" id="lastname" class="form-control" required autocomplete="off"/>
+              </div>
+  
+              <div class="form-group">
+                <label for="email">Email Address<span class="req">*</span></label>
+                <input type="email" id="email" class="form-control" required autocomplete="off"/>
+              </div>
+            
+              <div class="form-group">
+                <label for="password">Set A Password<span class="req">*</span></label>
+                <input type="password" id="password" class="form-control" required autocomplete="off"/>
+              </div>
+            
+              <button type="submit" class="btn btn-primary btn-block">Get Started</button>
+            
+            </form>
+  
+          </div>
+          
+          <div role="tabpanel" class="tab-pane fade" id="login">   
+            <h1 class="text-center">Welcome Back!</h1>
+            
+            <form action="/" method="post">
+            
+              <div class="form-group">
+                <label for="login-email">Email Address<span class="req">*</span></label>
+                <input type="email" id="login-email" class="form-control" required autocomplete="off"/>
+              </div>
+            
+              <div class="form-group">
+                <label for="login-password">Password<span class="req">*</span></label>
+                <input type="password" id="login-password" class="form-control" required autocomplete="off"/>
+              </div>
+            
+              <p class="forgot"><a href="#">Forgot Password?</a></p>
+            
+              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            
+            </form>
+  
+          </div>
+          
+        </div><!-- tab-content -->
+      </div><!-- col-md-6 -->
+    </div><!-- row -->
+  </div> <!-- /form -->
+  
+
 <body>
-
-	<div class="container my-5">
-		<div class="row justify-content-center">
-			<div class="col-md-6">
-
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs">
-					<li class="nav-item">
-						<a class="nav-link active" data-toggle="tab" href="#login">Iniciar sesión</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-toggle="tab" href="#register">Registro</a>
-					</li>
-				</ul>
-
-				<!-- Tab panes -->
-				<div class="tab-content">
-
-					<!-- Formulario de inicio de sesión -->
-					<div class="tab-pane active" id="login">
-						<form>
-							<h3 class="text-center mb-4">Inicio de sesión</h3>
-
-							<!-- Campo de correo electrónico -->
-							<div class="form-group">
-								<label for="email">Correo electrónico</label>
-								 <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
-							</div>
-
-							<!-- Campo de contraseña -->
-							<div class="form-group">
-								<label for="password">Contraseña</label>
-								<input type="password" class="form-control" id="password" placeholder="Ingresa tu contraseña">
-							</div>
-
-							<!-- Botón de inicio de sesión -->
-							<button type="submit" class="btn btn-primary w-100 mt-3">Iniciar sesión</button>
-						</form>
-					</div>
-
-					<!-- Formulario de registro -->
-					<div class="tab-pane" id="register">
-						<form>
-							<h3 class="text-center mb-4">Registro</h3>
-
-							<!-- Campo de nombre -->
-							<div class="form-group">
-								<label for="name">Nombre</label>
-								<input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
-							</div>
-
-							<!-- Campo de correo electrónico -->
-							<div class="form-group">
-								<label for="email2">Correo electrónico</label>
-								<input type="email" class="form-control" id="email2" placeholder="Ingresa tu correo electrónico">
-							</div>
-
-							<!-- Campo de contraseña -->
-							<div class="form-group">
-								<label for="password2">Contraseña</label>
-								<input type="password" class="form-control" id="password2" placeholder="Ingresa tu contraseña">
-							</div>
-
-							<!-- Botón de registro -->
-							<button type="submit" class="btn btn-primary w-100 mt-3">Registrarse</button>
-						</form>
-					</div>
-
-				</div>
-            </div>
-        </div>
-    </div>
 </body>
+</html>
