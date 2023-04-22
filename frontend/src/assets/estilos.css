@@ -1,0 +1,7 @@
+body {
+    /*background-color: #89c4e3; /* Color de fondo azul pastel */
+    background-image: linear-gradient(to bottom, #0078d4, #2b88d8, #00ff00);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}

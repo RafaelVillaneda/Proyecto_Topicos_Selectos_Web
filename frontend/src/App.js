@@ -1,4 +1,4 @@
-import './App.css';
+import './assets/estilos.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Landin from './components/landinPage';
 import Login from './components/login';
