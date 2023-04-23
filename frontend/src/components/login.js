@@ -17,7 +17,7 @@ const Login = () => {
             stock:stock
         })
     */
-    navigate('/');
+    navigate('/inicio');
 }
 
   return (
