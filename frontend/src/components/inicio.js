@@ -13,29 +13,47 @@ const inicio = () => {
                     <table className="table table-info table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Id</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Director</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Operacion</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>Titanic</td>
+                            <td>James Cameron</td>
+                            <td>1997</td>
+                            <td>Ciencia Ficcion</td>
+                            <td> 
+                            <button type="button" className="btn btn-warning">Editar</button>
+                            <button type="button" className="btn btn-danger">Eliminar</button>
+                            </td>
                         </tr>
                         <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
+                        <th scope="row">1</th>
+                            <td>Titanic</td>
+                            <td>James Cameron</td>
+                            <td>1997</td>
+                            <td>Ciencia Ficcion</td>
+                            <td> 
+                            <button type="button" className="btn btn-warning">Editar</button>
+                            <button type="button" className="btn btn-danger">Eliminar</button>
+                            </td>
                         </tr>
                         <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                        <th scope="row">1</th>
+                            <td>Titanic</td>
+                            <td>James Cameron</td>
+                            <td>1997</td>
+                            <td>Ciencia Ficcion</td>
+                            <td> 
+                            <button type="button" className="btn btn-warning">Editar</button>
+                            <button type="button" className="btn btn-danger">Eliminar</button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
