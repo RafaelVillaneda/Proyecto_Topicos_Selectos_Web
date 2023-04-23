@@ -4,7 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Landin from './components/landinPage';
 import Login from './components/login';
 import Registro from './components/registro';
-import Inicio from './components/inicio';
+import Inicio from './components/mostrarPeliculas';
 
 function App() {
   return (
