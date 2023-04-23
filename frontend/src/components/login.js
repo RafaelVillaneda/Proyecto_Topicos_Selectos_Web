@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 
 
 const login = () => {
-
-
-
   return (
     
     <div className="container">
