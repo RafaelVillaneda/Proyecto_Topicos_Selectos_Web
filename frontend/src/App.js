@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Landin from './components/landinPage';
 import Login from './components/login';
 import Registro from './components/registro';
+import Inicio from './components/inicio';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
               <Route path='/' element={<Landin />} />
               <Route path='/login' element={<Login />} />
               <Route path='/registro' element={<Registro />} />
+              <Route path='/inicio' element={<Inicio />} />
             </Routes>
           </BrowserRouter>
         </CSSTransition>
