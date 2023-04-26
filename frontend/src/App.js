@@ -1,4 +1,4 @@
-import './assets/estilos.css';
+import './assets/estilos.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Landin from './components/landinPage';

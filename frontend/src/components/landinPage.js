@@ -23,7 +23,7 @@ const landinPage = () => {
       <nav id="header" className="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <img src={{logo_logo}} className="rounded" alt="logo" width="50px" height="50px" />
+            <img src={logo_logo} className="rounded" alt="logo" width="50px" height="50px" />
             Horror Games</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -72,7 +72,7 @@ const landinPage = () => {
           <div id="carrusel" className="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src={{logo_carrusel}} className="d-block w-100" alt="Carrusel" />
+                <img src={logo_carrusel} className="d-block w-100" alt="Carrusel" />
               </div>
 
               <div className="overlay">
@@ -107,7 +107,7 @@ const landinPage = () => {
 
               <div className="col-6">                           
                 <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
-                  <img src="./assets/ib.png" className="card-img-top" alt="IB" width="640" height="360" />
+                  <img src={logo_ib} className="card-img-top" alt="IB" width="640" height="360" />
                   <div className="card-body">
                     <h5 className="card-title">Remake IB 2022</h5>
                     <div className="badges pb-3">
@@ -126,7 +126,7 @@ const landinPage = () => {
               </div>
               <div className="col-6">
                 <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px;"}}>
-                  <img src="./assets/bugeman.png" className="card-img-top" alt="bugeman" width="640" height="360" />
+                  <img src={logo_buggeman} className="card-img-top" alt="bugeman" width="640" height="360" />
                   <div className="card-body">
                     <h5 className="card-title">The Boogie Man</h5>
                     <div className="badges pb-3">
@@ -145,7 +145,7 @@ const landinPage = () => {
               </div>
               <div className="col-6">
                 <div className="card mb-3 border-danger " style={{maxWidth:"550px", maxHeight:"700px"}}>
-                  <img src="./assets/mogeko.png" className="card-img-top" alt="bugeman" width="640" height="360" />
+                  <img src={logo_modeko} className="card-img-top" alt="bugeman" width="640" height="360" />
                   <div className="card-body">
                     <h5 className="card-title">Mogeko Castle</h5>
                     <div className="badges pb-3">
@@ -164,7 +164,7 @@ const landinPage = () => {
 
               <div className="col-6">           
                 <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
-                  <img src="./assets/The Gray Garden.png" className="card-img-top" alt="The Gray Garden" width="640" height="360" />
+                  <img src={logo_theGray} className="card-img-top" alt="The Gray Garden" width="640" height="360" />
                   <div className="card-body">
                     <h5 className="card-title">El Jardín Gris/The Gray Garden</h5>
                     <div className="badges pb-3">
@@ -182,7 +182,7 @@ const landinPage = () => {
               </div>
               <div className="col-6">
                 <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
-                  <img src="./assets/Witch's Heart.png" className="card-img-top" alt="Witch's Heart" width="640" height="360" />
+                  <img src={logo_Wicth} className="card-img-top" alt="Witch's Heart" width="640" height="360" />
                   <div className="card-body">
                     <h5 className="card-title">Witch's Heart</h5>
                     <div className="badges pb-3">
@@ -203,7 +203,7 @@ const landinPage = () => {
               </div>
               <div className="col-6">
                 <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
-                  <img src="./assets/Midnight Train.jpeg" className="card-img-top" alt="Midnight Train" width="640" height="360" />
+                  <img src={logo_mid} className="card-img-top" alt="Midnight Train" width="640" height="360" />
                   <div className="card-body">
                     <h5 className="card-title">Midnight Train</h5>
                     <div className="badges pb-3">
@@ -237,7 +237,7 @@ const landinPage = () => {
                 <div className="card mb-3 border-warning border border-4" >
                   <div className="row g-0">
                     <div className="col-md-4">
-                      <img src="./assets/ib2.jpg" className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                      <img src={logo_ib2} className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -254,7 +254,7 @@ const landinPage = () => {
                 <div className="card mb-3 border-warning border border-4" >
                   <div className="row g-0">
                     <div className="col-md-4">
-                      <img src="./assets/descargar.jpeg" className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                      <img src={logo_desc} className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -271,7 +271,7 @@ const landinPage = () => {
                 <div className="card mb-3 border-warning border border-4" >
                   <div className="row g-0">
                     <div className="col-md-4">
-                      <img src="./assets/Ann.png" className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                      <img src={logo_ann} className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -316,7 +316,7 @@ const landinPage = () => {
             <div className="row align-items-center">
               <div className="col-6">
                 <div className="card" style={{width:"500px"}}>
-                  <img className="card-img-top" src="./assets/Ann.png" alt="Card image" />
+                  <img className="card-img-top" src={logo_ann} alt="Card image" />
                   <div className="card-img-overlay">
                     <h4 className="card-title">Junkay</h4>
 
@@ -327,7 +327,7 @@ const landinPage = () => {
 
               <div className="col-6">
                 <div className="card" style={{width:"500px"}}>
-                  <img className="card-img-top" src="./assets/FLOTER.png " alt="Card image" />
+                  <img className="card-img-top" src={logo_floter} alt="Card image" />
                   <div className="card-img-overlay">
                     <h4 className="card-title">LucyTrap</h4>
 
@@ -340,7 +340,7 @@ const landinPage = () => {
               <br /><br /><br /><br />
               <div className="col-12 col-center">
                 <div className="card" style={{width:"500px"}}>
-                  <img className="card-img-top" src="./assets/ib2.jpg" alt="Card image" />
+                  <img className="card-img-top" src={logo_ib2} alt="Card image" />
                   <div className="card-img-overlay">
                     <h4 className="card-title">Don precioso</h4>
                     <br /><br /><br /><br />
@@ -386,7 +386,7 @@ const landinPage = () => {
                   <hr className="text-light"/>
                     <a className="">RPG Tkool 2000 <b>RTP</b> </a>
                     <hr className="text-light" />
-                    <img src="./assets/desc.png"/>
+                    <img src={logo_desc}/>
                 </div>
               </div>
             </div>
@@ -401,7 +401,7 @@ const landinPage = () => {
       <footer id="footer" className="pb-4 pt-4 text-light" style={{backgroundImage:"url('assets/FLOTER.jpg')"}}>
         <div className="row text-center">
           <div className="col pb-2 pt-4">
-            <img src="assets/logo.png" className="rounded" alt="Logo ITSJ" width="120px" height="120px" />
+            <img src={logo_logo} className="rounded" alt="Logo ITSJ" width="120px" height="120px" />
           </div>
         </div>
 
