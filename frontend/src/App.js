@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Landin from './components/landinPage';
 import Login from './components/login';
-import Registro from './components/registro';
+import Registro from './components/Registro';
 import Inicio from './components/mostrarPeliculas';
 
 function App() {

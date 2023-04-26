@@ -3,9 +3,10 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [correo, setCorreo] = useState('');
-  const [contraseña, setContraseña]=useState('')
+  const [contraseña, setContraseña] = useState('')
   const navigate = useNavigate();
-  const iniciarSeccion = async (e) =>{
+  
+  const iniciarSeccion = async (e) => {
     e.preventDefault();
     console.log(correo)
     console.log(contraseña)
@@ -17,14 +18,14 @@ const Login = () => {
             stock:stock
         })
     */
-    navigate('/inicio');
-}
+    //navigate('/inicio');
+  }
 
   return (
     <div className="container">
       <div className="row justify-content-center mt-5">
         <div className="col-lg-6">
-          <div className="card">
+          <div className="card bg-dark text-white">
             <div className="card-header">
               <h3 className="text-center">Inicio de Sesión</h3>
             </div>
@@ -39,13 +40,13 @@ const Login = () => {
                   <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
                   <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Ingrese su contraseña" onChange={(e) => setContraseña(e.target.value)} />
                 </div>
-                <button type="submit" className="btn btn-primary w-100">Iniciar Sesión</button>
+                <button type="submit" className="btn btn-danger w-100">Iniciar Sesión</button>
               </form>
             </div>
-            <div className="card-footer text-center">
-              ¿No tiene una cuenta? <Link to='/registro'>Regístrese aquí</Link>
-              <br/> <br/>
-              Oh bien ¿quieres volver a la pagina principal?<Link to='/'>Toca aqui!</Link>
+            <div className="card-footer text-center bg-dark">
+              ¿No tiene una cuenta? <Link to='/registro' className="text-danger">Regístrese aquí</Link>
+              <br /> <br />
+              ¿Quieres volver a la página principal? <Link to='/' className="text-danger">Toca aquí!</Link>
             </div>
           </div>
         </div>

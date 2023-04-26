@@ -257,7 +257,7 @@ const landinPage = () => {
                 <div className="card mb-3 border-warning border border-4" >
                   <div className="row g-0">
                     <div className="col-md-4">
-                      <img src={logo_desc} className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                      <img src={logo_terapia} className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -278,7 +278,7 @@ const landinPage = () => {
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
-                        <h5 className="card-title">Remake IB 2022</h5>
+                        <h5 className="card-title">Ann</h5>
                         <p className="card-text ">Ann, una estudiante de arte, se encuentra atrapada en la academia cuando accidentalmente rompió una de las reglas de la academia...</p>
                         <button type="button" className="btn btn-primary">Saber más</button>
                       </div>
