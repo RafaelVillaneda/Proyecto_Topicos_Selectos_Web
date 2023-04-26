@@ -60,6 +60,9 @@ const landinPage = () => {
                   <li><a className="dropdown-item" href="#">Comedia</a></li>
                   <li><a className="dropdown-item" href="#">Aventura</a></li>
                 </ul>
+                <li className="nav-item">
+                <Link className="nav-link" to='/login' href="#descargasRTP">Iniciar Sesión</Link>
+              </li>
               </li>
             </ul>
           </div>
