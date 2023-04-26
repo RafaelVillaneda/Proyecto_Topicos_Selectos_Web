@@ -1,18 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo_avatar from '../assets/logo_avatar.jpeg'
-import logo_starWars from '../assets/logo_StarWars.jpg'
-import logo_coraline from '../assets/coraline.jpg'
-import logo_castillo from '../assets/logo_castillo.jpg'
+import logo_ann from '../assets/Ann.png'
+import logo_buggeman from '../assets/bugeman.png'
+import logo_carrusel from '../assets/carrusel1.jpg'
+import logo_desc from '../assets/desc.png'
+import logo_descargar from '../assets/descargar.jpeg'
+import logo_floter from '../assets/FLOTER.jpg'
+import logo_floter2 from '../assets/FLOTER.png'
+import logo_ib from '../assets/ib.png'
+import logo_ib2 from '../assets/ib2.jpg'
+import logo_logo from '../assets/logo.png'
+import logo_mid from '../assets/Midnight Train.jpeg'
+import logo_modeko from '../assets/mogeko.png'
+import logo_terapia from '../assets/Terapia con el Dr. Albert Krueger.png'
+import logo_theGray from '../assets/The Gray Garden.png'
+import logo_Wicth from "../assets/Witch's Heart.png"
+
 
 const landinPage = () => {
   return (
     <div>
-      Hola
       <nav id="header" className="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            <img src="./assets/logo.png" className="rounded" alt="logo" width="50px" height="50px" />
+            <img src={{logo_logo}} className="rounded" alt="logo" width="50px" height="50px" />
             Horror Games</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -61,7 +72,7 @@ const landinPage = () => {
           <div id="carrusel" className="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src="./assets/carrusel1.jpg" className="d-block w-100" alt="Evento 1" />
+                <img src={{logo_carrusel}} className="d-block w-100" alt="Carrusel" />
               </div>
 
               <div className="overlay">
