@@ -4,130 +4,414 @@ import logo_avatar from '../assets/logo_avatar.jpeg'
 import logo_starWars from '../assets/logo_StarWars.jpg'
 import logo_coraline from '../assets/coraline.jpg'
 import logo_castillo from '../assets/logo_castillo.jpg'
+
 const landinPage = () => {
   return (
-<div>
-        
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div className="container-fluid">
-      <a className="navbar-brand" href="#">Guevana!</a>
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Inicio</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Películas</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Series</a>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to='/login'>Quieres unirte?</Link>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  
-  <header className="bg-light py-5">
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-8 col-md-10 mx-auto">
-          <div className="text-center">
-            <h1 className="fw-bolder">Películas en alta definición</h1>
-            <p className="lead mb-0">Las mejores películas en calidad HD. ¡Disfrútalas desde la comodidad de tu hogar!</p>
+    <div>
+      Hola
+      <nav id="header" className="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
+            <img src="./assets/logo.png" className="rounded" alt="logo" width="50px" height="50px" />
+            Horror Games</a>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="#juegos">Ultimos juegos añadidos</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="#mas_desc">Lo mas decargado</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="#comentarios">Comentarios</a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" aria-current="page" href="#descargasRTP">Enlaces RTP</a>
+              </li>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Generos
+                </a>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#">Horror</a></li>
+                  <li><a className="dropdown-item" href="#">Surreal</a></li>
+                  <li><a className="dropdown-item" href="#">Survival Horror</a></li>
+                  <li><a className="dropdown-item" href="#">Psicológico</a></li>
+                  <li><a className="dropdown-item" href="#">Comedia</a></li>
+                  <li><a className="dropdown-item" href="#">Aventura</a></li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </header>
+      </nav>
 
-  <section className="py-5">
-    <div className="container">
-      <h2 className="text-center mb-5">Películas populares</h2>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-        <div className="col">
-          <div className="card h-100">
-            <img src={logo_avatar} className="card-img-top" alt="Error de carga de Imagen"/>
-            <div className="card-body">
-              <h5 className="card-title">Avatar</h5>
-              <p className="card-text">Avatar es una franquicia de medios estadounidense creada por James Cameron,
-                que consiste en una serie planificada de
-                películas épicas de ciencia ficción producidas por Lightstorm Entertainment y distribuidas por 20th
-                Century Studios</p>
-              <a href="#" className="btn btn-primary">Más información</a>
-            </div>
-          </div>
-        </div>
-        
 
-        <div className="col">
-          <div className="card h-100">
-            <img src={logo_starWars} className="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h5 className="card-title">Star Wars: episodio IV - una nueva esperanza</h5>
-              <p className="card-text">La nave en la que viaja la princesa Leia es capturada por las tropas imperiales
-                al mando del temible Darth Vader. Antes de ser atrapada,
-                Leia consigue introducir un mensaje en su robot R2-D2, quien acompañado
-                de su inseparable C-3PO logra escapar.</p>
-              <a href="#" className="btn btn-primary">Más información</a>
-            </div>
-          </div>
-        </div>
+      <main id="main">
+        <div className="container-fluid">
+          <div id="carrusel" className="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <img src="./assets/carrusel1.jpg" className="d-block w-100" alt="Evento 1" />
+              </div>
 
-        <div className="col">
-          <div className="card h-100">
-            <img src={logo_coraline} className="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h5 className="card-title">Coraline</h5>
-              <p className="card-text">Coraline Jones: es la protagonista de la película; es una niña rígida,
-                fuerte de carácter y clara al hablar. Tiene 11 años de edad.
-                ​ Se muda a una casa compartida por otras personas llamada
-                "El Palacio Rosa", junto a sus padres.</p>
-              <a href="#" className="btn btn-primary">Más información</a>
+              <div className="overlay">
+                <div className="container">
+                  <div className="row align-items-center">
+                    <div className="col-md-6 offset-md-6 text-center text-end mt-4">
+                      <h2>Horro Games</h2>
+                      <br />
+                      <p className="d-none d-md-block">
+                        Aquí encontraras un sin fin de juegos traducidos al español espero
+                        que disfrutes las aportaciones de la comunidad.
+                      </p>
+                      <a href="#" className="btn btn-outline-light mt-2" role="button">Quiero aportar
+                        traducciones</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
 
-        <div className="col">
-          <div className="card h-100">
-            <img src={logo_castillo} className="card-img-top" alt="..."/>
-            <div className="card-body">
-              <h5 className="card-title">El increíble castillo vagabundo</h5>
-              <p className="card-text">Sophie es una adolescente que trabaja en una tienda de sombreros en un pueblo como
-                muchos,
-                pero su vida da un giro total cuando una bruja la transforma en una anciana.</p>
-              <a href="#" className="btn btn-primary">Más información</a>
+        <section id="juegos" className="mt-4 mt-4">
+          <div className="col text-center text-uppercase">
+            <h3>Conoce nuestros ultimos juegos añadidos</h3>
+            <hr />
+          </div>
+          <div className="container">
+
+            <div className="row align-items-center" id="tarjetas">
+
+              <div className="col-6">                           
+                <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
+                  <img src="./assets/ib.png" className="card-img-top" alt="IB" width="640" height="360" />
+                  <div className="card-body">
+                    <h5 className="card-title">Remake IB 2022</h5>
+                    <div className="badges pb-3">
+                      <span className="badge bg-success">Horror</span>
+                      <span className="badge bg-warning">Survival</span>
+                    </div>
+                    <p className="card-text" />
+                    Una niña llamada Ib visita una galería de arte con sus padres.
+                    Mientras observa las distintas obras de arte, Ib se da cuenta de repente de que está
+                    sola.
+                    Mientras busca a alguien, a cualquier persona, el museo empieza a cambiar...
+                    <a className="btn btn-primary align-center">Ver mas</a>
+
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px;"}}>
+                  <img src="./assets/bugeman.png" className="card-img-top" alt="bugeman" width="640" height="360" />
+                  <div className="card-body">
+                    <h5 className="card-title">The Boogie Man</h5>
+                    <div className="badges pb-3">
+                      <span className="badge bg-success">Horror</span>
+                      <span className="badge bg-warning">Survival</span>
+                    </div>
+                    <p className="card-text">
+                      Keith Baring es un detective frío y dedicado a su trabajo,
+                      cuyo jefe decide otorgarle algunos días libres. Junto a su esposa Helena,
+                      emprenderá un viaje turístico a un antiguo castillo, en donde las maravillas del paisaje y la
+                      historia que guardan aquellas paredes conformarán un destino inesperado...
+                    </p>
+                    <a className="btn btn-primary align-center">Ver mas</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="card mb-3 border-danger " style={{maxWidth:"550px", maxHeight:"700px"}}>
+                  <img src="./assets/mogeko.png" className="card-img-top" alt="bugeman" width="640" height="360" />
+                  <div className="card-body">
+                    <h5 className="card-title">Mogeko Castle</h5>
+                    <div className="badges pb-3">
+                      <span className="badge bg-success">Horror</span>
+                      <span className="badge bg-primary">Surreal</span>
+                    </div>
+                    <p className="card-text">
+                      Yonaka Kurai es una chica normal de preparatoria que siempre
+                      toma el tren para regresar a casa. Esta vez estaba regresando
+                      temprano a casa por que era el día en que su hermano regresaba.
+                    </p>
+                    <a className="btn btn-primary">Ver mas</a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-6">           
+                <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
+                  <img src="./assets/The Gray Garden.png" className="card-img-top" alt="The Gray Garden" width="640" height="360" />
+                  <div className="card-body">
+                    <h5 className="card-title">El Jardín Gris/The Gray Garden</h5>
+                    <div className="badges pb-3">
+                      <span className="badge bg-info">Aventura</span>
+                      <span className="badge bg-primary">Comedia</span>
+                    </div>
+                    <p className="card-text">
+                      Tras una terrible guerra entre ángeles y demonios, ambos bandos terminan
+                      llegando a un acuerdo para poder co-existir
+                      en paz y armonía. Pasa el tiempo y ahora ángeles y demonios conviven juntos.
+                    </p>
+                    <a className="btn btn-primary">Ver mas</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
+                  <img src="./assets/Witch's Heart.png" className="card-img-top" alt="Witch's Heart" width="640" height="360" />
+                  <div className="card-body">
+                    <h5 className="card-title">Witch's Heart</h5>
+                    <div className="badges pb-3">
+                      <span className="badge bg-success">Horror</span>
+                      <span className="badge bg-info">Aventura</span>
+                    </div>
+                    <p className="card-text">
+                      Mientras jugaba en las montañas, Claire Elford termina
+                      refugiándose de la lluvia en una mansión. Pronto, se da cuenta de que
+                      hay otras cuatro personas, monstruos extraños - y que no puede salir. En
+                      compañía de demonios, los cinco deben descubrir cómo escapar… y
+                      resolver el misterio del legendario tesoro que cumple deseos, el Corazón
+                      de Bruja.
+                    </p>
+                    <a className="btn btn-primary">Ver mas</a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-6">
+                <div className="card mb-3 border-danger " style={{maxWidth:"550px",maxHeight:"700px"}}>
+                  <img src="./assets/Midnight Train.jpeg" className="card-img-top" alt="Midnight Train" width="640" height="360" />
+                  <div className="card-body">
+                    <h5 className="card-title">Midnight Train</h5>
+                    <div className="badges pb-3">
+                      <span className="badge bg-success">Horror</span>
+                      <span className="badge bg-info">Aventura</span>
+                    </div>
+                    <p className="card-text">
+                      Luna es una viajera que está buscando cierto lugar. De repente, mientras viaja en tren, las personas a su alrededor
+                      desaparecen y el tren se detiene en un misterioso lugar. Ahí encuentra un reloj de bolsillo junto a unas instrucciones;
+                      debe encontrar el siguiente tren antes de que se agote el tiempo o se quedará atrapada para siempre.
+                    </p>
+                    <a className="btn btn-primary">Ver mas</a>
+                  </div>
+                </div>
+              </div>
+              <div>
+              </div>
             </div>
+          </div>
+
+
+        </section>
+
+        <section id="mas_desc" className="mt-4 mt-4">
+          <h2 className="text-center">Top 4 juegos mas descargados!</h2>
+          <div className="container">
+            <hr className="text-light" />
+            <div className="row align-items-center">
+
+              <div className="col-6">
+                <div className="card mb-3 border-warning border border-4" >
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img src="./assets/ib2.jpg" className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">Remake IB 2022</h5>
+                        <p className="card-text ">Se nos presenta un remake del primer juego con modificaciones muy interesantes</p>
+                        <button type="button" className="btn btn-primary">Saber más</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-6">
+                <div className="card mb-3 border-warning border border-4" >
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img src="./assets/descargar.jpeg" className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">Terapia con el Dr. Albert Krueger</h5>
+                        <p className="card-text ">El genio del Dr. Krueger vuelve a brillar con sus nuevas y revolucionarias sesiones terapéuticas. Permita que el nuevo tratamiento ... </p>
+                        <button type="button" className="btn btn-primary">Saber más</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-6">
+                <div className="card mb-3 border-warning border border-4" >
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img src="./assets/Ann.png" className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">Remake IB 2022</h5>
+                        <p className="card-text ">Ann, una estudiante de arte, se encuentra atrapada en la academia cuando accidentalmente rompió una de las reglas de la academia...</p>
+                        <button type="button" className="btn btn-primary">Saber más</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-6">
+                <div className="card mb-3 border-warning border border-4" >
+                  <div className="row g-0">
+                    <div className="col-md-4">
+                      <img src="https://1.bp.blogspot.com/-PP94p-x03PU/YH9YJuBFs8I/AAAAAAAAR1o/m96XGHDFEKEc3He5NNDNxJmWF_Ess6BCACLcBGAsYHQ/s580/dsds.gif" className="card-img" alt="img_ib" style={{maxWidth:"150%",maxHeight:"150%"}} />
+                    </div>
+                    <div className="col-md-8">
+                      <div className="card-body">
+                        <h5 className="card-title">OMORI</h5>
+                        <p className="card-text ">Se trata de un videojuego del género terror psicológico y surrealista que explora temas como la ansiedad, la depresión y el trauma.</p>
+                        <button type="button" className="btn btn-primary">Saber más</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
+
+          </div>
+        </section>
+
+        <section id="comentarios" className="mt-4 mt-4">
+          <h4 className="text-center">Comentarios de la comunidad</h4>
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-6">
+                <div className="card" style={{width:"500px"}}>
+                  <img className="card-img-top" src="./assets/Ann.png" alt="Card image" />
+                  <div className="card-img-overlay">
+                    <h4 className="card-title">Junkay</h4>
+
+                    <p className="card-text">Buenos juegos con historias interesantes.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-6">
+                <div className="card" style={{width:"500px"}}>
+                  <img className="card-img-top" src="./assets/FLOTER.png " alt="Card image" />
+                  <div className="card-img-overlay">
+                    <h4 className="card-title">LucyTrap</h4>
+
+                    <p className="card-text">Donde estuvo esta pagina toda mi vida!!</p>
+                  </div>
+                </div>
+              </div>
+              <br /><br /><br /><br />
+              <hr className="text-light" />
+              <br /><br /><br /><br />
+              <div className="col-12 col-center">
+                <div className="card" style={{width:"500px"}}>
+                  <img className="card-img-top" src="./assets/ib2.jpg" alt="Card image" />
+                  <div className="card-img-overlay">
+                    <h4 className="card-title">Don precioso</h4>
+                    <br /><br /><br /><br />
+                    <p className="card-text">Exelentes juegos de calidad publicados aqui libre de cualquier virus o cosas por el estilo recomendado 100%</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+        </section>
+
+        <section className="mt-4 mt-4">
+
+          <div id="descargasRTP" className="container mt-4 mt-4">
+            <h1 className="text-center">Descargas RTP</h1>
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-12 col-md-6 ps-0 pe-0">
+                  <div style={{width:"100%",height:"0",paddingBottom:"154%",position:"relative"}}><iframe src="https://giphy.com/embed/1yld7nW3oQ2IyRubUm" width="100%" height="100%" style={{position:"absolute"}} frameBorder="0" className="giphy-embed" allowFullScreen></iframe></div><p></p>
+                </div>
+                <div className="col-12 col-md-6 ps-3 pe-3 pt-4 pb-4">
+                  <h3>¿Qué son los RTP?</h3>
+                  <p>Los RTP (Runtime Package) son paquetes con contenido de los RPG Makers estos incluyen gráficas, sonidos y
+                    otros archivos necesarios para los juegos. Los RTP son necesarios para hacer correr los juegos,
+                    ya que normalmente al crear un juego, se utilizan muchos de los archivos que incluye este paquete (RTP).
+                  </p>
+                  <h3>Descargas</h3>
+                  <hr className="text-light" />
+                  <a className="">RPG maker VX Ace <b>RTP</b> </a>
+                  <hr className="text-light" />
+                  <a className="">RPG maker VX  <b>RTP</b> </a>
+                  <hr className="text-light" />
+                  <a className="">RPG maker XP <b>RTP</b> </a>
+                  <hr className="text-light" />
+                  <a className="">RPG maker 2000 <b>RTP</b> </a>
+                  <hr className="text-light" />
+                  <a className="">RPG maker 2003 <b>RTP</b> </a>
+                  <hr className="text-light" />
+                  <a className="">RPG Tkool XP <b>RTP</b> </a>
+                  <hr className="text-light"/>
+                    <a className="">RPG Tkool 2000 <b>RTP</b> </a>
+                    <hr className="text-light" />
+                    <img src="./assets/desc.png"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+      </main>
+      <hr className="text-light" />         
+
+      <footer id="footer" className="pb-4 pt-4 text-light" style={{backgroundImage:"url('assets/FLOTER.jpg')"}}>
+        <div className="row text-center">
+          <div className="col pb-2 pt-4">
+            <img src="assets/logo.png" className="rounded" alt="Logo ITSJ" width="120px" height="120px" />
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <div className="row text-center">
+          <div className="col pb-2 pt-4">
+            <p>Copyright &copy; 2022 Horror Games</p>
 
-  
+          </div>
+        </div>
 
-  <footer className="bg-light py-3">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-6 text-center text-md-start">
-          <p>&copy; 2023 Mi sitio web. Todos los derechos reservados.</p>
-        </div>
-        <div className="col-md-6 text-center text-md-end">
-          <p>Desarrollado por <a href="https://github.com/RafaelVillaneda">Rafael Eulalio Villaneda de la torre</a></p>
-        </div>
-      </div>
+      </footer>
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+      </script>
     </div>
-  </footer>
-        
-    </div>
+
   )
 }
 
