@@ -398,7 +398,7 @@ const landinPage = () => {
       </main>
       <hr className="text-light" />         
 
-      <footer id="footer" className="pb-4 pt-4 text-light" style={{backgroundImage:"url('assets/FLOTER.jpg')"}}>
+      <footer id="footer" className="pb-4 pt-4 text-light" style={{backgroundImage:logo_ann}}>
         <div className="row text-center">
           <div className="col pb-2 pt-4">
             <img src={logo_logo} className="rounded" alt="Logo ITSJ" width="120px" height="120px" />
@@ -407,7 +407,7 @@ const landinPage = () => {
 
         <div className="row text-center">
           <div className="col pb-2 pt-4">
-            <p>Copyright &copy; 2022 Horror Games</p>
+            <p>Copyright &copy; 2023 Horror Games</p>
 
           </div>
         </div>
