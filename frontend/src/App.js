@@ -5,7 +5,7 @@ import Landin from './components/landinPage';
 import Login from './components/login';
 import Registro from './components/Registro';
 import Inicio from './components/mostrarPeliculas';
-
+import NotFoundPage from './components/NotFoundPage';
 function App() {
   return (
     <div className="App">
@@ -16,6 +16,7 @@ function App() {
               <Route path='/login' element={<Login />} />
               <Route path='/registro' element={<Registro />} />
               <Route path='/inicio' element={<Inicio />} />
+              <Route path="*" element={<NotFoundPage/>}/>
             </Routes>
           </BrowserRouter>
         </CSSTransition>
