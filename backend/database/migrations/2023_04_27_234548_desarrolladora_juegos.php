@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('juegos', function (Blueprint $table) {
-            //
+        Schema::table('desarrolladora', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre_desarrolladora')->nullable(false);
         });
     }
 
@@ -21,8 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('juegos', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('desarrolladora');
     }
 };

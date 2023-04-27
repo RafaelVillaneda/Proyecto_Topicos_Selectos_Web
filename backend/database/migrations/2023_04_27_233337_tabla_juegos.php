@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+
 return new class extends Migration
 {
     /**
@@ -13,12 +14,12 @@ return new class extends Migration
     {
         Schema::create('juegos', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('genero');
-            $table->text('descripcion');
-            $table->unsignedSmallInteger('ano_publicacion');
-            $table->unsignedBigInteger('desarrolladora_id')->nullable();
-            $table->foreign('desarrolladora_id')->references('id')->on('desarrolladoras');
+            $table->string('nombre')->nullable(false);
+            $table->string('genero')->nullable(false);
+            $table->text('descripcion')->nullable(false);
+            $table->unsignedSmallInteger('ano_publicacion')->nullable(false);
+            $table->unsignedBigInteger('desarrolladora_id')->nullable(false);
+            $table->foreignIdFor('');
             $table->string('grupo_traduccion')->nullable();
             $table->timestamps();
         });
