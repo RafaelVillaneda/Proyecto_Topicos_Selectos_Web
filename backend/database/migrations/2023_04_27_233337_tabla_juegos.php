@@ -11,7 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
+        Schema::create('juegos', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->string('genero');
+            $table->text('descripcion');
+            $table->unsignedSmallInteger('ano_publicacion');
+            $table->unsignedBigInteger('desarrolladora_id')->nullable();
+            $table->foreign('desarrolladora_id')->references('id')->on('desarrolladoras');
+            $table->string('grupo_traduccion')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -19,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('juegos');
     }
 };

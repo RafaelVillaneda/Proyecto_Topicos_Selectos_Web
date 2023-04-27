@@ -10,7 +10,7 @@ const Login = () => {
     e.preventDefault();
     console.log(correo)
     console.log(contraseña)
-    window.location.href='https://www.youtube.com/watch?v=01-OPHjwDLU&list=RD01-OPHjwDLU&start_radio=1'
+    window.location.href='http://127.0.0.1:8000'
     /*
     await axios.post(api,
         {
