@@ -13,7 +13,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -21,18 +20,24 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-       $user=new User();
-       $user->email = $request->email;
-       $user->password = $request->password;
-       $user->save();
+        $user = new User();
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->save();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $email)
     {
-        //
+        $user = User::where('email', $email)->first();
+
+        if ($user) {
+            return $user;
+        } else {
+            return response()->json(['error' => 'Usuario no encontrado'], 404);
+        }
     }
 
     /**
@@ -48,6 +53,6 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        $usuario=User::destroy($id);
+        $usuario = User::destroy($id);
     }
 }

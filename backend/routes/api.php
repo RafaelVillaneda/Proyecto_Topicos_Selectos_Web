@@ -24,6 +24,7 @@ Route::get('/react', function () {
 });
 
 Route::controller(UserController::class)->group(function(){
+    Route::get('/usuario/{email}','show');
     Route::post('/usuario','store');
     Route::delete('/usuario/{id}','destroy');
 });
