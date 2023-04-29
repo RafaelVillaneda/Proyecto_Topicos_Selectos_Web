@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-const api='';
+
+const api='http://localhost:8000/api/usuario/';
+//http://localhost:8000/api/usuario/1/1
 const Login = () => {
   const [correo, setCorreo] = useState('');
   const [contraseña, setContraseña] = useState('')
@@ -11,14 +14,22 @@ const Login = () => {
     e.preventDefault();
     console.log(correo)
     console.log(contraseña)
-    window.location.href='http://127.0.0.1:8000'
+    try {
+      const response = await axios.get(api+correo+'/'+contraseña);
+      //console.log(api+correo+'/'+contraseña);
+      // Si la API devuelve un usuario, redirige a la vista correspondiente
+      window.location.href='http://127.0.0.1:8000'
+    } catch (error) {
+      // Si la API devuelve un error, muestra un mensaje y no carga ninguna vista
+      alert('Tu correo o contraseña no estan correctos');
+      console.log(error.response.data.error);
+    }
+   
     /*
-    await axios.post(api,
+    await axios.get(api,
         {
-            description:description,
-            price:price,
-            stock:stock
-        })
+            email:correo,
+        });
     */
     //navigate('/inicio');
   }

@@ -29,14 +29,16 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $email)
+    public function show(string $email,$password)
     {
-        $user = User::where('email', $email)->first();
+        $user = User::where('email', $email)
+                    ->where('password', $password)
+                    ->first();
 
         if ($user) {
-            return $user;
+            return response()->json($user, 200);
         } else {
-            return response()->json(['error' => 'Usuario no encontrado'], 404);
+            return response()->json(['error' => 'Error de logeo'], 404);
         }
     }
 
