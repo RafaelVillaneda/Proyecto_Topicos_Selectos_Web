@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
 import { Link} from 'react-router-dom';
+import axios from 'axios';
 
 const Registro = () => {
   const [correo, setCorreo] = useState('');
   const [contraseña, setContraseña] = useState('')
   const [contraseña2, setContraseña2] = useState('');
-  
+  const api='http://localhost:8000/api/usuario';
   const Registro = async () => {
     //e.preventDefault();
     console.log(correo)
     console.log(contraseña)
+    await axios.post(api, {
+      email: correo,
+      password: contraseña
+    })
+    .then(response => {
+      console.log(response);
+      alert('Usuario agregado correctamente');
+    })
+    .catch(error => {
+      console.log(error);
+      alert('error usuario no agregado');
+    });
   }
   const validarContraseñas = () => {
     console.log(contraseña)
