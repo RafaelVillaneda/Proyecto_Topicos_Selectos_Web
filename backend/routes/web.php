@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::middleware('web')->get('/', function() {
-    //session()->put('logeado', true);
+    session()->put('logeado', true);
     if (session()->has('logeado') && session('logeado') === true) {
         error_log('Variable de logeo correcta');
         return view('welcome');
@@ -21,6 +21,10 @@ Route::middleware('web')->get('/', function() {
         error_log('La variable de logeo no existe o no es true');
         return redirect('http://localhost:3000');
     }
+});
+Route::middleware('web')->get('/cerrarSesion', function() {
+    session()->put('logeado', false);
+    return redirect('http://localhost:3000');
 });
 /*
 Route::get('/', function () {
