@@ -12,7 +12,8 @@ class juegos extends Controller
      */
     public function index()
     {
-        Juego::all();
+        $juegos = Juego::all();
+        return view('/dash', compact('juegos'));
     }
 
     /**

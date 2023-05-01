@@ -22,17 +22,21 @@
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mi pequeña lulu</td>
-      <td>horror</td>
-      <td>Juego de meyo</td>
-      <td>2015/td>
-      <td>no se</td>
-      <td>no se</td>
+      @foreach ($juegos as $registro)
+    <tr>
+      <td>{{ $registro->id }}</td>
+      <td>{{ $registro->nombre }}</td>
+      <td>{{ $registro->descripcion }}</td>
+      <td>{{ $registro->ano_publicacion }}</td>
+      <td>{{ $registro->desarrolladora_id }}</td>
+      <td>{{ $registro->grupo_traduccion }}</td>
       <td>
         <button type="button" class="btn btn-warning">Modificar</button>
         <button type="button" class="btn btn-danger">Eliminar</button>
       </td>
+      <!-- Agrega más columnas según las columnas de tu tabla -->
+    </tr>
+    @endforeach
     </tr>
   </tbody>
 </table>

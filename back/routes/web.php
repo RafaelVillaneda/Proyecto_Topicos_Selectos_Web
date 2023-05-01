@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Juego;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +23,8 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dash', function () {
-        return view('dash.index');
+        $juegos = Juego::all();
+        return view('dash.index', ['juegos' => $juegos]);
     })->name('dashboard');
 });
 
