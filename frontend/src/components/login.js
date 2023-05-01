@@ -14,6 +14,8 @@ const Login = () => {
     e.preventDefault();
     console.log(correo)
     console.log(contraseña)
+    window.location.href='http://127.0.0.1:8000/login'
+    /*
     try {
       const response = await axios.get(api+correo+'/'+contraseña);
       //console.log(api+correo+'/'+contraseña);
@@ -24,6 +26,7 @@ const Login = () => {
       alert('Tu correo o contraseña no estan correctos');
       console.log(error.response.data.error);
     }
+    */
    
     /*
     await axios.get(api,

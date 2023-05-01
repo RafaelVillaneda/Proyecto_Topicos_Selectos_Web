@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use \Illuminate\Support\Cookies;
+use Illuminate\Support\Facades\Cookie;
 
 class UserController extends Controller
 {
@@ -29,24 +31,26 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $email,$password)
+    public function show(string $email, $password)
     {
         $user = User::where('email', $email)
-                    ->where('password', $password)
-                    ->first();
+            ->where('password', $password)
+            ->first();
 
-                    if ($user) {
-                        if (session()->exists('logeado') && session('logeado') === false) {
-                            session()->forget('logeado');
-                            session()->put('logeado', true);
-                        } else {
-                            session()->put('logeado', true);
-                        }
-                        return response()->json($user, 200);
-                    } else {
-                        session()->forget('logeado');
-                        return response()->json(['error' => 'Error de logeo'], 404);
-                    }
+        if ($user) {
+            if (session()->exists('logeado') && session('logeado') === false) {
+                //session()->forget('logeado');
+                session()->put('logeado', true);
+            } else {
+                session()->put('logeado', true);
+                error_log('Logeado desde el controlador :D: ' . session()->get('logeado'));
+            }
+            $cookie=Cookie::make('logeo',true);
+            return response()->json($user, 200);
+        } else {
+            session()->put('logeado', false); // establecer a false
+            return response()->json(['error' => 'Error de logeo'], 404);
+        }
     }
 
     /**

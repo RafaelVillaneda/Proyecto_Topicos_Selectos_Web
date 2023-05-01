@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::middleware('web')->get('/', function() {
     session()->put('logeado', true);
+    error_log('Logeado desde web.php->' . session()->get('logeado'));
     if (session()->has('logeado') && session('logeado') === true) {
         error_log('Variable de logeo correcta');
         return view('welcome');
@@ -22,10 +23,19 @@ Route::middleware('web')->get('/', function() {
         return redirect('http://localhost:3000');
     }
 });
+
 Route::middleware('web')->get('/cerrarSesion', function() {
     session()->put('logeado', false);
+    //error_log('Logeado->' . session()->get('logeado'));
     return redirect('http://localhost:3000');
 });
+
+Route::middleware('web')->controller(UserController::class)->group(function(){
+    Route::get('/usuario/{email}/{password}','show');
+    Route::post('/usuario','store');
+    Route::delete('/usuario/{id}','destroy');
+});
+
 /*
 Route::get('/', function () {
     return view('welcome');

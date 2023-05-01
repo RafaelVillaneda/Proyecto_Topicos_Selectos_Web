@@ -61,7 +61,7 @@ const landinPage = () => {
                   <li><a className="dropdown-item" href="#">Aventura</a></li>
                 </ul>
                 <li className="nav-item">
-                <Link className="nav-link" to='/login' href="#descargasRTP">Iniciar Sesión</Link>
+                <a className="nav-link" href="http://127.0.0.1:8000/login">Iniciar Sesión</a>
               </li>
               </li>
             </ul>

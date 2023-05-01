@@ -3,6 +3,8 @@
 use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +20,21 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+/*
+Route::middleware(['web', StartSession::class])->group(function() {
+    Route::controller(UserController::class)->group(function(){
+        Route::get('/usuario/{email}/{password}','show');
+        Route::post('/usuario','store');
+        Route::delete('/usuario/{id}','destroy');
+    });
+});
+*/
 
-Route::controller(UserController::class)->group(function(){
+Route::middleware('web')->controller(UserController::class)->group(function(){
     Route::get('/usuario/{email}/{password}','show');
     Route::post('/usuario','store');
     Route::delete('/usuario/{id}','destroy');
 });
+
+
+
