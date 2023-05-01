@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth.login');
 });
-
+//Ruta dash principal
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -26,6 +26,30 @@ Route::middleware([
         return view('dash.index');
     })->name('dashboard');
 });
+
+//Ruta Juegos
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dash/juegos', function () {
+        return view('dash.juegos');
+    })->name('dashboard');
+});
+
+//Ruta Desarrolladora
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dash/desarrolladora', function () {
+        return view('dash.desarrolladora');
+    })->name('dashboard');
+});
+
+
 
 Route::middleware([
     'auth:sanctum',

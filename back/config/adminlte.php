@@ -297,10 +297,7 @@ return [
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -316,12 +313,12 @@ return [
         [
             'text'       => 'Juegos Publicados',
             'icon_color' => 'red',
-            'url'        => '#',
+            'url'        => 'dash/juegos',
         ],
         [
             'text'       => 'Desarrolladoras',
             'icon_color' => 'yellow',
-            'url'        => '#',
+            'url'        => 'dash/desarrolladora',
         ]
     ],
 
