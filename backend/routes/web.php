@@ -12,15 +12,15 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::middleware('web')->get('/',function(){
-    if(session()->exists('logeado') && session()->get('logeado')==true){
-            session()->put('logeado',false);
-            return view('welcome');
-        return redirect('http://localhost:3000');
-    }else{
+Route::middleware('web')->get('/', function() {
+    //session()->put('logeado', true);
+    if (session()->has('logeado') && session('logeado') === true) {
+        error_log('Variable de logeo correcta');
+        return view('welcome');
+    } else {
+        error_log('La variable de logeo no existe o no es true');
         return redirect('http://localhost:3000');
     }
-    //return view('welcome');
 });
 /*
 Route::get('/', function () {

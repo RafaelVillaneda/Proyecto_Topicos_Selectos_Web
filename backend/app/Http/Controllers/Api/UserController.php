@@ -29,16 +29,22 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $email,$password)
+    public function show(string $email, $password)
     {
         $user = User::where('email', $email)
-                    ->where('password', $password)
-                    ->first();
+            ->where('password', $password)
+            ->first();
 
         if ($user) {
-            session()->put('logeado',false);
+            if (session()->exists('logeado') && session('logeado') === false) {
+                session()->forget('logeado');
+                session()->put('logeado', true);
+            } else {
+                session()->put('logeado', true);
+            }
             return response()->json($user, 200);
         } else {
+            session()->forget('logeado');
             return response()->json(['error' => 'Error de logeo'], 404);
         }
     }

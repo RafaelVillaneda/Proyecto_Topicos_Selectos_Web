@@ -19,10 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/react', function () {
-    return redirect('http://localhost:3000');
-});
-
 Route::controller(UserController::class)->group(function(){
     Route::get('/usuario/{email}/{password}','show');
     Route::post('/usuario','store');
