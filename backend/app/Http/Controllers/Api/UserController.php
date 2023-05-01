@@ -36,6 +36,7 @@ class UserController extends Controller
                     ->first();
 
         if ($user) {
+            session()->put('logeado',false);
             return response()->json($user, 200);
         } else {
             return response()->json(['error' => 'Error de logeo'], 404);
