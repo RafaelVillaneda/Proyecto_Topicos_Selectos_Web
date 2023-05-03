@@ -16,6 +16,7 @@ use App\Models\Juego;
 Route::get('/', function () {
     return view('auth.login');
 });
+
 //Ruta dash principal
 Route::middleware([
     'auth:sanctum',

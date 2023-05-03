@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Juego;
+use App\Models\Desarrolladora;
 
 class juegos extends Controller
 {
@@ -13,6 +14,11 @@ class juegos extends Controller
     public function index()
     {
         $juegos = Juego::all();
+        foreach ($juegos as $key => $juego) {
+            echo($juego);
+            //Desarrolladora::where('id','');
+        }
+        Desarrolladora::where('id','');
         return view('/dash', compact('juegos'));
     }
 
@@ -37,7 +43,7 @@ class juegos extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**
