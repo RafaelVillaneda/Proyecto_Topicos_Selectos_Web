@@ -85,7 +85,7 @@
             <input type="text" class="form-control" id="grupo_tra" aria-describedby="emailHelp" value="1">
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -103,6 +103,7 @@
 @stop
 
 @section('js')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
@@ -130,6 +131,14 @@
     modal.find('.modal-body #grupo_tra').val(grupo)
   })
 </script>
+<script>
+  document.getElementById("submitBtn").onclick = function() {
+  if (!confirm("¿Estás seguro de que quieres efectuar los cambios?")) {
+    return false;
+  }
+};
+</script>
+
 
 
 <script>
