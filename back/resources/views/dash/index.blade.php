@@ -7,6 +7,8 @@
 @stop
 
 @section('content')
+<button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#modal_crear">Crear</button>
+<br><br>
 <table class="table" id="tabla_Juegos">
   <thead>
     <tr>
@@ -57,22 +59,22 @@
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre del Juego</label>
-            <input type="text" class="form-control" id="nombre" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" id="nombre" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Genero del Juego</label>
-            <input type="text" class="form-control" id="genero" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" id="genero" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Descripcion del juego</label>
-            <input type="text" class="form-control" id="desc" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" id="desc" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Año de publicacion</label>
-            <input type="text" class="form-control" id="año" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" id="año" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
@@ -82,10 +84,66 @@
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Grupo de traduccion</label>
-            <input type="text" class="form-control" id="grupo_tra" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" id="grupo_tra" aria-describedby="emailHelp" value="1">
           </div>
 
           <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modal_crear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Crear registro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/juegos" method="post">
+          @csrf
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Nombre del Juego</label>
+            <input type="text" required class="form-control" name="nombre" placeholder="Escribe el nombre del juego">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Genero del Juego</label>
+            <input type="text" required class="form-control" name="genero" placeholder="Escribe el genero del juego" >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Descripcion del juego</label>
+            <input type="text" required class="form-control" name="desc" placeholder="Descripcion breve del Juego" >
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Año de publicacion</label>
+            <input type="number" required min="1950" class="form-control" name="año" placeholder="Año de publicacion">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Desarrolladora</label>
+            <select class="form-select" name="pruebaMuajaja" aria-describedby="emailHelp">
+            <option value="">Selecciona una opción</option>
+            
+            
+
+            <input type="text" class="form-control" name="desa" placeholder="Elige la desarrolladora">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Grupo de traduccion</label>
+            <input type="text" required class="form-control" name="grupo_tra" min="1950" placeholder="Nombre del grupo de traduccion">
+          </div>
+
+          <button id="submitBtn" type="submit" class="btn btn-primary">Agregar registro</button>
         </form>
       </div>
       <div class="modal-footer">

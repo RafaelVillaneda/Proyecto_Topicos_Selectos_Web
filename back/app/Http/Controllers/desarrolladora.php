@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Desarrolladoras;
 use Illuminate\Http\Request;
+
 
 class desarrolladora extends Controller
 {
@@ -35,7 +37,7 @@ class desarrolladora extends Controller
      */
     public function show(string $id)
     {
-        //
+        
     }
 
     /**

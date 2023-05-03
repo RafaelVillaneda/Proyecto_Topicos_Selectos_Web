@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Juego;
-use App\Models\Desarrolladora;
 
 class juegos extends Controller
 {
@@ -13,13 +12,7 @@ class juegos extends Controller
      */
     public function index()
     {
-        $juegos = Juego::all();
-        foreach ($juegos as $key => $juego) {
-            echo($juego);
-            //Desarrolladora::where('id','');
-        }
-        Desarrolladora::where('id','');
-        return view('/dash', compact('juegos'));
+        
     }
 
     /**
@@ -35,7 +28,18 @@ class juegos extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo($request->get('nombre'));
+        $juego=new Juego();
+        $juego->id=null;
+        $juego->nombre= $request->get('nombre');
+        $juego->genero= $request->get('genero');
+        $juego->descripcion= $request->get('desc');
+        $juego->ano_publicacion= $request->get('año');
+        $juego->desarrolladora_id= $request->get('desa');
+        $juego->grupo_traduccion= $request->get('grupo_tra');
+
+        $juego->save();
+        return redirect('/dash');
     }
 
     /**

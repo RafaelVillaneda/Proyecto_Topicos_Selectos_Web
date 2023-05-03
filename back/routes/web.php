@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Juego;
+use App\Models\Desarrolladora;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,42 +18,6 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-//Ruta dash principal
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dash', function () {
-        $juegos = Juego::all();
-        return view('dash.index', ['juegos' => $juegos]);
-    })->name('dashboard');
-});
-
-//Ruta Juegos
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dash/juegos', function () {
-        return view('dash.juegos');
-    })->name('dashboard');
-});
-
-//Ruta Desarrolladora
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dash/desarrolladora', function () {
-        return view('dash.desarrolladora');
-    })->name('dashboard');
-});
-
-
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -61,4 +26,22 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/dash', function () {
+        $juegos = Juego::all();
+        //$desarrolladoras = Desarrolladora::all();
+        return view('dash.index', ['juegos' => $juegos]);
+    })->name('dashboard');
+    
+    Route::get('/dash/juegos', function () {
+        $juegos = Juego::all();
+        return view('dash.juegos',['juegos' => $juegos]);
+    })->name('dashboard');
+
+    Route::get('/dash/desarrolladora', function () {
+        return view('dash.desarrolladora');
+    })->name('dashboard');
+
+    //CRUD
+    Route::resource('juegos','App\Http\Controllers\juegos');
 });
