@@ -33,7 +33,7 @@
       <td>{{ $registro->desarrolladora_id }}</td>
       <td>{{ $registro->grupo_traduccion }}</td>
       <td>
-      <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $registro->id }}" data-nombre="{{ $registro->nombre }}" data-genero="{{ $registro->genero }}" data-descripcion="{{ $registro->descripcion }}" data-ano="{{ $registro->ano_publicacion }}" data-desarrolladora="{{ $registro->desarrolladora_id }}" data-grupo="{{ $registro->grupo_traduccion }}">Modificar</button>
+        <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $registro->id }}" data-nombre="{{ $registro->nombre }}" data-genero="{{ $registro->genero }}" data-descripcion="{{ $registro->descripcion }}" data-ano="{{ $registro->ano_publicacion }}" data-desarrolladora="{{ $registro->desarrolladora_id }}" data-grupo="{{ $registro->grupo_traduccion }}">Modificar</button>
         <button type="button" class="btn btn-danger">Eliminar</button>
       </td>
       <!-- Agrega más columnas según las columnas de tu tabla -->
@@ -115,12 +115,12 @@
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Genero del Juego</label>
-            <input type="text" required class="form-control" name="genero" placeholder="Escribe el genero del juego" >
+            <input type="text" required class="form-control" name="genero" placeholder="Escribe el genero del juego">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Descripcion del juego</label>
-            <input type="text" required class="form-control" name="desc" placeholder="Descripcion breve del Juego" >
+            <input type="text" required class="form-control" name="desc" placeholder="Descripcion breve del Juego">
           </div>
 
           <div class="mb-3">
@@ -130,12 +130,15 @@
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Desarrolladora</label>
-            <select class="form-select" name="pruebaMuajaja" aria-describedby="emailHelp">
-            <option value="">Selecciona una opción</option>
-            
-            
+            <select required id="desaSelect" class="form-control" name="desa">
+              <option value="">Selecciona una opción</option>
+              @foreach ($desa as $registro)
+              <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
+              @endforeach
+            </select>
 
-            <input type="text" class="form-control" name="desa" placeholder="Elige la desarrolladora">
+            <input id="desaInput" readonly required type="text" class="form-control" name="desa" placeholder="Elige la desarrolladora">
+
           </div>
 
           <div class="mb-3">
@@ -168,7 +171,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 
 <script>
-  $('#exampleModal').on('show.bs.modal', function (event) {
+  $('#exampleModal').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget) // Botón que activó el modal
     var id = button.data('id') // Extraer la información de atributos de datos
     var nombre = button.data('nombre')
@@ -189,12 +192,13 @@
     modal.find('.modal-body #grupo_tra').val(grupo)
   })
 </script>
+
 <script>
   document.getElementById("submitBtn").onclick = function() {
-  if (!confirm("¿Estás seguro de que quieres efectuar los cambios?")) {
-    return false;
-  }
-};
+    if (!confirm("¿Estás seguro de que quieres efectuar los cambios?")) {
+      return false;
+    }
+  };
 </script>
 
 
@@ -204,4 +208,14 @@
     $('#tabla_Juegos').DataTable();
   });
 </script>
+
+<script>
+  const desaSelect = document.getElementById('desaSelect');
+  const desaInput = document.getElementById('desaInput');
+
+  desaSelect.addEventListener('change', (event) => {
+    desaInput.value = event.target.value;
+  });
+</script>
+
 @stop

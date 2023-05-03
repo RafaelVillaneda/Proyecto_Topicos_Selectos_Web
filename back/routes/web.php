@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\desarrolladora as ControllersDesarrolladora;
 use Illuminate\Support\Facades\Route;
 use App\Models\Juego;
 use App\Models\Desarrolladora;
@@ -29,8 +30,8 @@ Route::middleware([
 
     Route::get('/dash', function () {
         $juegos = Juego::all();
-        //$desarrolladoras = Desarrolladora::all();
-        return view('dash.index', ['juegos' => $juegos]);
+        $desarrolladoras = Desarrolladora::all();
+        return view('dash.index', ['juegos' => $juegos,'desa'=>$desarrolladoras]);
     })->name('dashboard');
     
     Route::get('/dash/juegos', function () {
@@ -39,6 +40,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::get('/dash/desarrolladora', function () {
+        $desa=Desarrolladora::all();
+
         return view('dash.desarrolladora');
     })->name('dashboard');
 

@@ -28,7 +28,6 @@ class juegos extends Controller
      */
     public function store(Request $request)
     {
-        echo($request->get('nombre'));
         $juego=new Juego();
         $juego->id=null;
         $juego->nombre= $request->get('nombre');
