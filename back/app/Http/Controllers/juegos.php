@@ -62,7 +62,17 @@ class juegos extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $juego=new Juego();
+        $juego->id=null;
+        $juego->nombre= $request->get('nombre');
+        $juego->genero= $request->get('genero');
+        $juego->descripcion= $request->get('desc');
+        $juego->ano_publicacion= $request->get('año');
+        $juego->desarrolladora_id= $request->get('desa');
+        $juego->grupo_traduccion= $request->get('grupo_tra');
+
+        $juego->save();
+        return redirect('/dash');
     }
 
     /**

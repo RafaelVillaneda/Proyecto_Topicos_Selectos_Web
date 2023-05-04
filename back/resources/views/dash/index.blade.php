@@ -19,6 +19,7 @@
       <th scope="col">Año de publicacion</th>
       <th scope="col">Desarrolladora</th>
       <th scope="col">Grupo de traducción</th>
+      <th scope="col">Lugar de origen</th>
       <th scope="col">Accion</th>
     </tr>
   </thead>
@@ -54,40 +55,39 @@
         <form>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">ID</label>
-            <input type="text" readonly class="form-control" id="id" aria-describedby="emailHelp" value="1">
+            <input type="text" readonly class="form-control" name="id" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre del Juego</label>
-            <input type="text" required class="form-control" id="nombre" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" name="nombre" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Genero del Juego</label>
-            <input type="text" required class="form-control" id="genero" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" name="genero" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Descripcion del juego</label>
-            <input type="text" required class="form-control" id="desc" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" name="desc" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Año de publicacion</label>
-            <input type="text" required class="form-control" id="año" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" name="año" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Desarrolladora</label>
-            <input type="text" class="form-control" id="desa" aria-describedby="emailHelp" value="1">
+            <input type="text" class="form-control" name="desa" aria-describedby="emailHelp" value="1">
           </div>
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Grupo de traduccion</label>
-            <input type="text" required class="form-control" id="grupo_tra" aria-describedby="emailHelp" value="1">
+            <input type="text" required class="form-control" name="grupo_tra" aria-describedby="emailHelp" value="1">
           </div>
-
-          <button id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+          <button id="submitBtn" type="submit" class="btn btn-danger">Actualizar registro</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -136,7 +136,7 @@
               <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
               @endforeach
             </select>
-
+            <br><label for="exampleInputEmail1" class="form-label">Id de la desarrolladora</label>
             <input id="desaInput" readonly required type="text" class="form-control" name="desa" placeholder="Elige la desarrolladora">
 
           </div>

@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Desarrolladora;
+use App\Models\grupotraduccion;
 
 return new class extends Migration
 {
@@ -19,7 +20,8 @@ return new class extends Migration
             $table->text('descripcion')->nullable(false);
             $table->unsignedSmallInteger('ano_publicacion')->nullable(false);
             $table->foreignIdFor(Desarrolladora::class);
-            $table->string('grupo_traduccion')->nullable();
+            $table->foreignIdFor(grupotraduccion::class);
+            $table->string('grupo_traduccion')->nullable(false);
             $table->timestamps();
         });
     }

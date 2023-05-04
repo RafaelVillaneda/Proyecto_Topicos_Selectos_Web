@@ -36,7 +36,8 @@ Route::middleware([
     
     Route::get('/dash/juegos', function () {
         $juegos = Juego::all();
-        return view('dash.juegos',['juegos' => $juegos]);
+        $desarrolladoras = Desarrolladora::all();
+        return view('dash.juegos',['juegos' => $juegos,'desa'=>$desarrolladoras]);
     })->name('dashboard');
 
     Route::get('/dash/desarrolladora', function () {
