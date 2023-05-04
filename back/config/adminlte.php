@@ -309,16 +309,21 @@ return [
             'url'  => '/user/profile',
             'icon' => 'fas fa-fw fa-user',
         ],
-        ['header' => 'labels'],
+        ['header' => 'Paneles'],
         [
             'text'       => 'Juegos Publicados',
             'icon_color' => 'red',
-            'url'        => 'dash/juegos',
+            'url'        => 'dash/juegos'
         ],
         [
             'text'       => 'Desarrolladoras',
             'icon_color' => 'yellow',
-            'url'        => 'dash/desarrolladora',
+            'url'        => 'dash/desarrolladora'
+        ],
+        [
+            'text' => 'Grupo de traducciones',
+            'icon_color' => 'green',
+            'url'        => 'dash/traductores'
         ]
     ],
 

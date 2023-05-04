@@ -4,6 +4,8 @@ use App\Http\Controllers\desarrolladora as ControllersDesarrolladora;
 use Illuminate\Support\Facades\Route;
 use App\Models\Juego;
 use App\Models\Desarrolladora;
+use App\Models\grupotraduccion;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,9 +37,13 @@ Route::middleware([
     })->name('dashboard');
     
     Route::get('/dash/juegos', function () {
-        $juegos = Juego::all();
         $desarrolladoras = Desarrolladora::all();
-        return view('dash.juegos',['juegos' => $juegos,'desa'=>$desarrolladoras]);
+        return view('dash.juegos',['desa'=>$desarrolladoras]);
+    })->name('dashboard');
+
+    Route::get('/dash/traductores', function () {
+        $data = grupotraduccion::all();
+        return view('dash.grupoTraduccion',['traductores' => $data]);
     })->name('dashboard');
 
     Route::get('/dash/desarrolladora', function () {
