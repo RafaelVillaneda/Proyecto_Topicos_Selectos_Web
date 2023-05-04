@@ -21,7 +21,6 @@ return new class extends Migration
             $table->unsignedSmallInteger('ano_publicacion')->nullable(false);
             $table->foreignIdFor(Desarrolladora::class);
             $table->foreignIdFor(grupotraduccion::class);
-            $table->string('grupo_traduccion')->nullable(false);
             $table->timestamps();
         });
     }

@@ -34,6 +34,7 @@
       <td>{{ $registro->grupo_traduccion }}</td>
       <td>
         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $registro->id }}" data-nombre="{{ $registro->nombre }}" data-genero="{{ $registro->genero }}" data-descripcion="{{ $registro->descripcion }}" data-ano="{{ $registro->ano_publicacion }}" data-desarrolladora="{{ $registro->desarrolladora_id }}" data-grupo="{{ $registro->grupo_traduccion }}">Modificar</button>
+        <br><br>
         <button type="button" class="btn btn-danger">Eliminar</button>
       </td>
       <!-- Agrega más columnas según las columnas de tu tabla -->
@@ -142,7 +143,15 @@
 
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Grupo de traduccion</label>
-            <input type="text" required class="form-control" name="grupo_tra" min="1950" placeholder="Nombre del grupo de traduccion">
+            <select required id="id:traduccion" class="form-control" name="desa" onchange="updateGroupId()">
+              <option value="">Selecciona una opción</option>
+              @foreach ($desa as $registro)
+              <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
+              @endforeach
+            </select>
+            <br>
+            <label for="exampleInputEmail1" class="form-label">Id del grupo de traductores</label>
+            <input readonly type="text" required class="form-control" name="grupo_tra" id="grupo_tra" min="1950" placeholder="Nombre del grupo de traduccion">
           </div>
 
           <button id="submitBtn" type="submit" class="btn btn-primary">Agregar registro</button>
@@ -215,6 +224,14 @@
   desaSelect.addEventListener('change', (event) => {
     desaInput.value = event.target.value;
   });
+</script>
+
+<script>
+  function updateGroupId() {
+    var select = document.getElementById("id:traduccion");
+    var groupId = select.options[select.selectedIndex].value;
+    document.getElementById("grupo_tra").value = groupId;
+  }
 </script>
 
 @stop

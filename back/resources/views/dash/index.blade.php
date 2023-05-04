@@ -32,7 +32,7 @@
       <td>{{ $registro->descripcion }}</td>
       <td>{{ $registro->ano_publicacion }}</td>
       <td>{{ $registro->desarrolladora_id }}</td>
-      <td>{{ $registro->grupo_traduccion }}</td>
+      <td>{{ $registro->grupotraduccion_id }}</td>
       <td>
         <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="{{ $registro->id }}" data-nombre="{{ $registro->nombre }}" data-genero="{{ $registro->genero }}" data-descripcion="{{ $registro->descripcion }}" data-ano="{{ $registro->ano_publicacion }}" data-desarrolladora="{{ $registro->desarrolladora_id }}" data-grupo="{{ $registro->grupo_traduccion }}">Modificar</button>
         <button type="button" class="btn btn-danger">Eliminar</button>

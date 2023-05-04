@@ -33,12 +33,14 @@ Route::middleware([
     Route::get('/dash', function () {
         $juegos = Juego::all();
         $desarrolladoras = Desarrolladora::all();
-        return view('dash.index', ['juegos' => $juegos,'desa'=>$desarrolladoras]);
+        $desa=Desarrolladora::all();
+        return view('dash.index', ['juegos' => $juegos,'desa'=>$desarrolladoras,'desa'=>$desa]);
     })->name('dashboard');
     
     Route::get('/dash/juegos', function () {
         $desarrolladoras = Desarrolladora::all();
-        return view('dash.juegos',['desa'=>$desarrolladoras]);
+        $juegos = Juego::all();
+        return view('dash.juegos',['juegos' => $juegos,'desa'=>$desarrolladoras]);
     })->name('dashboard');
 
     Route::get('/dash/traductores', function () {
@@ -48,8 +50,7 @@ Route::middleware([
 
     Route::get('/dash/desarrolladora', function () {
         $desa=Desarrolladora::all();
-
-        return view('dash.desarrolladora');
+        return view('dash.desarrolladora',['desa'=>$desa]);
     })->name('dashboard');
 
     //CRUD

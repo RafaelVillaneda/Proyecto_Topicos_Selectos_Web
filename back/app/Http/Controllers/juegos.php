@@ -35,7 +35,7 @@ class juegos extends Controller
         $juego->descripcion= $request->get('desc');
         $juego->ano_publicacion= $request->get('año');
         $juego->desarrolladora_id= $request->get('desa');
-        $juego->grupo_traduccion= $request->get('grupo_tra');
+        $juego->grupotraduccion_id= $request->get('grupo_tra');
 
         $juego->save();
         return redirect('/dash');
@@ -69,7 +69,7 @@ class juegos extends Controller
         $juego->descripcion= $request->get('desc');
         $juego->ano_publicacion= $request->get('año');
         $juego->desarrolladora_id= $request->get('desa');
-        $juego->grupo_traduccion= $request->get('grupo_tra');
+        $juego->grupotraduccion_id= $request->get('grupotraduccion_id');
 
         $juego->save();
         return redirect('/dash');
