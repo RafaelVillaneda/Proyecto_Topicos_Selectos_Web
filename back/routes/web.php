@@ -40,7 +40,8 @@ Route::middleware([
     Route::get('/dash/juegos', function () {
         $desarrolladoras = Desarrolladora::all();
         $juegos = Juego::all();
-        return view('dash.juegos',['juegos' => $juegos,'desa'=>$desarrolladoras]);
+        $data = grupotraduccion::all();
+        return view('dash.juegos',['juegos' => $juegos,'desa'=>$desarrolladoras,'traductores' => $data]);
     })->name('dashboard');
 
     Route::get('/dash/traductores', function () {
@@ -54,5 +55,9 @@ Route::middleware([
     })->name('dashboard');
 
     //CRUD
+    //Altas
     Route::resource('juegos','App\Http\Controllers\juegos');
+    //Cambios
+    //Route::put('/juegos/{id}', 'App\Http\Controllers\juegos@update');
+
 });

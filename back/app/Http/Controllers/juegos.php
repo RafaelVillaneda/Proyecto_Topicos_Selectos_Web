@@ -12,7 +12,6 @@ class juegos extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -28,17 +27,17 @@ class juegos extends Controller
      */
     public function store(Request $request)
     {
-        $juego=new Juego();
-        $juego->id=null;
-        $juego->nombre= $request->get('nombre');
-        $juego->genero= $request->get('genero');
-        $juego->descripcion= $request->get('desc');
-        $juego->ano_publicacion= $request->get('año');
-        $juego->desarrolladora_id= $request->get('desa');
-        $juego->grupotraduccion_id= $request->get('grupo_tra');
+        $juego = new Juego();
+        $juego->id = null;
+        $juego->nombre = $request->get('nombre');
+        $juego->genero = $request->get('genero');
+        $juego->descripcion = $request->get('desc');
+        $juego->ano_publicacion = $request->get('año');
+        $juego->desarrolladora_id = $request->get('desa');
+        $juego->grupotraduccion_id = $request->get('grupo_tra');
 
         $juego->save();
-        return redirect('/dash');
+        return redirect('/dash/juegos');
     }
 
     /**
@@ -46,7 +45,6 @@ class juegos extends Controller
      */
     public function show(string $id)
     {
-        
     }
 
     /**
@@ -62,17 +60,21 @@ class juegos extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $juego=new Juego();
-        $juego->id=null;
-        $juego->nombre= $request->get('nombre');
-        $juego->genero= $request->get('genero');
-        $juego->descripcion= $request->get('desc');
-        $juego->ano_publicacion= $request->get('año');
-        $juego->desarrolladora_id= $request->get('desa');
-        $juego->grupotraduccion_id= $request->get('grupotraduccion_id');
-
-        $juego->save();
-        return redirect('/dash');
+        try {
+            $juego = Juego::findOrFail($id);
+            $juego->nombre = $request->input('nombre');
+            $juego->genero = $request->input('genero');
+            $juego->descripcion = $request->input('desc');
+            $juego->ano_publicacion = $request->input('año');
+            $juego->desarrolladora_id = $request->input('desa');
+            $juego->grupotraduccion_id = $request->input('grupo_tra');
+            $juego->save();
+            return redirect('/dash/juegos');
+        } catch (\Throwable $e) {
+            dd("Error la actualizzacion no pudo ser completada");
+            return redirect('/dash/juegos');
+        }
+        
     }
 
     /**

@@ -19,7 +19,6 @@
       <th scope="col">Año de publicacion</th>
       <th scope="col">Desarrolladora</th>
       <th scope="col">Grupo de traducción</th>
-      <th scope="col">Lugar de origen</th>
       <th scope="col">Accion</th>
     </tr>
   </thead>
