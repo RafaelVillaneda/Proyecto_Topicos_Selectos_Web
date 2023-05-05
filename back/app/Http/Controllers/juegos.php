@@ -82,6 +82,13 @@ class juegos extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $registro = Juego::find($id);
+        if (!$registro) {
+            dd("Error el registro que deseas eliminar no existe");
+            return redirect('/dash/juegos');
+        }
+        $registro->delete();
+        //dd("Registro eliminado satisfactoria mente");
+        return redirect('/dash/juegos')->with('elimiadoCorrecto', 'Registro eliminado satisfactoriamente.');
     }
 }
