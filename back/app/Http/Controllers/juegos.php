@@ -37,7 +37,7 @@ class juegos extends Controller
         $juego->grupotraduccion_id = $request->get('grupo_tra');
 
         $juego->save();
-        return redirect('/dash/juegos');
+        return redirect('/dash/juegos')->with('agregado', 'Registro creado satisfactoriamente.');
     }
 
     /**
@@ -69,10 +69,10 @@ class juegos extends Controller
             $juego->desarrolladora_id = $request->input('desa');
             $juego->grupotraduccion_id = $request->input('grupo_tra');
             $juego->save();
-            return redirect('/dash/juegos');
+            return redirect('/dash/juegos')->with('modificado', 'Registro modificado satisfactoriamente.');
         } catch (\Throwable $e) {
             dd("Error la actualizzacion no pudo ser completada");
-            return redirect('/dash/juegos');
+            return redirect('/dash/juegos')->with('modificado', 'Registro NO modificado satisfactoriamente.');
         }
         
     }
