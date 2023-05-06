@@ -57,5 +57,6 @@ Route::middleware([
     //CRUD´s
     Route::resource('juegos','App\Http\Controllers\juegos');
     Route::resource('desarrolladora','App\Http\Controllers\desarrolladoraController');
+    Route::resource('traducciones','App\Http\Controllers\traduccionController');
 
 });
