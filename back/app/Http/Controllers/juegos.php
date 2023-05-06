@@ -26,7 +26,7 @@ class juegos extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {   
         $juego = new Juego();
         $juego->id = null;
         $juego->nombre = $request->get('nombre');
@@ -35,6 +35,14 @@ class juegos extends Controller
         $juego->ano_publicacion = $request->get('año');
         $juego->desarrolladora_id = $request->get('desa');
         $juego->grupotraduccion_id = $request->get('grupo_tra');
+
+        if (empty(trim($juego->nombre)
+         && trim($juego->nombre)
+         && trim($juego->genero)
+         && trim($juego->descripcion))) {
+            // el campo está vacío o solo contiene espacios
+            return redirect()->back()->with(['errorAgregado' => 'Error el registro no pudo ser creado :(']);
+        }
 
         $juego->save();
         return redirect('/dash/juegos')->with('agregado', 'Registro creado satisfactoriamente.');
@@ -84,7 +92,7 @@ class juegos extends Controller
     {
         $registro = Juego::find($id);
         if (!$registro) {
-            dd("Error el registro que deseas eliminar no existe");
+            return redirect('/dash/juegos')->with('elimiadoCorrecto', 'El registro no pudo ser elimiando posiblemente ya no existe');
             return redirect('/dash/juegos');
         }
         $registro->delete();

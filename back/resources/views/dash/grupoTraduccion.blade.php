@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-<table class="table" id="tabla_traducciones">
+<table class="table table-responsive-sm" id="tabla_traducciones">
   <thead>
     <tr>
       <th scope="col">ID</th>

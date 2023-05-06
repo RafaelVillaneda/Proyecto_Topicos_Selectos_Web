@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Desarrolladoras;
+use App\Models\Desarrolladora;
 use Illuminate\Http\Request;
+use PhpParser\Node\Stmt\TryCatch;
 
-
-class desarrolladora extends Controller
+class desarrolladoraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,7 +29,17 @@ class desarrolladora extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $desa = new Desarrolladora();
+            echo ($request->get('nombre'));
+            $desa->id = null;
+            $desa->nombre_desarrolladora = $request->get('nombre_desa');
+
+            $desa->save();
+            return redirect('/dash/desarrolladora')->with('agregado', 'Registro creado satisfactoriamente.');
+        } catch (\Throwable $th) {
+            return redirect('/dash/desarrolladora')->with('ErrorAgregado', 'La insercion no pudo efectuarse');
+        }
     }
 
     /**
@@ -37,7 +47,7 @@ class desarrolladora extends Controller
      */
     public function show(string $id)
     {
-        
+        //
     }
 
     /**

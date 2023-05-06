@@ -54,10 +54,8 @@ Route::middleware([
         return view('dash.desarrolladora',['desa'=>$desa]);
     })->name('dashboard');
 
-    //CRUD
-    //Altas
+    //CRUD´s
     Route::resource('juegos','App\Http\Controllers\juegos');
-    //Cambios
-    //Route::put('/juegos/{id}', 'App\Http\Controllers\juegos@update');
+    Route::resource('desarrolladora','App\Http\Controllers\desarrolladoraController');
 
 });

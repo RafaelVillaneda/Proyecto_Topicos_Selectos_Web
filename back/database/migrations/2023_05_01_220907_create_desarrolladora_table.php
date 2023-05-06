@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('desarrolladora', function (Blueprint $table) {
             $table->id();
             $table->string('nombre_desarrolladora')->nullable(false);
+            $table->timestamps();
         });
     }
 
