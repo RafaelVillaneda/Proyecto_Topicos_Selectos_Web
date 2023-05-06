@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\grupotraduccion;
 use Illuminate\Http\Request;
 
 class traduccionController extends Controller
@@ -27,7 +28,17 @@ class traduccionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $desa = new grupotraduccion();
+            //echo ($request->get('nombre_desa'));
+            $desa->id = null;
+            $desa->nombre_grupo = $request->get('nombre_tra');
+
+            $desa->save();
+            return redirect('/dash/traductores')->with('agregado', 'Registro creado satisfactoriamente.');
+        } catch (\Throwable $th) {
+            return redirect('/dash/traductores')->with('ErrorAgregado', 'La insercion no pudo efectuarse');
+        }
     }
 
     /**
@@ -51,7 +62,15 @@ class traduccionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        try {
+            $id = $request->input('id');
+            $desa = grupotraduccion::findOrFail($id);
+            $desa->nombre_grupo = $request->input('nombre_tra');
+            $desa->save();
+            return redirect('/dash/traductores')->with('modificado', 'Registro modificado satisfactoriamente.');
+        } catch (\Throwable $e) {
+            return redirect('/dash/traductores')->with('modificado', 'Registro NO modificado satisfactoriamente verifica y vuelve a intentar.');
+        }
     }
 
     /**
@@ -59,6 +78,12 @@ class traduccionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $registro = grupotraduccion::find($id);
+        if (!$registro) {
+            return redirect('/dash/traductores')->with('elimiadoCorrecto', 'El registro no pudo ser elimiando posiblemente ya no existe');
+        }
+        $registro->delete();
+        //dd("Registro eliminado satisfactoria mente");
+        return redirect('/dash/traductores')->with('elimiadoCorrecto', 'Registro eliminado satisfactoriamente.');
     }
 }
