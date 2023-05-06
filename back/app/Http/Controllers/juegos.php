@@ -93,7 +93,6 @@ class juegos extends Controller
         $registro = Juego::find($id);
         if (!$registro) {
             return redirect('/dash/juegos')->with('elimiadoCorrecto', 'El registro no pudo ser elimiando posiblemente ya no existe');
-            return redirect('/dash/juegos');
         }
         $registro->delete();
         //dd("Registro eliminado satisfactoria mente");

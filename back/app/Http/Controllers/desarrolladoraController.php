@@ -31,7 +31,7 @@ class desarrolladoraController extends Controller
     {
         try {
             $desa = new Desarrolladora();
-            echo ($request->get('nombre'));
+            echo ($request->get('nombre_desa'));
             $desa->id = null;
             $desa->nombre_desarrolladora = $request->get('nombre_desa');
 
@@ -61,16 +61,30 @@ class desarrolladoraController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
-    {
-        //
+    public function update(Request $request)
+{
+    try {
+        $id = $request->input('id');
+        $desa = Desarrolladora::findOrFail($id);
+        $desa->nombre_desarrolladora = $request->input('nombre_desa');
+        $desa->save();
+        return redirect('/dash/desarrolladora')->with('modificado', 'Registro modificado satisfactoriamente.');
+    } catch (\Throwable $e) {
+        return redirect('/dash/desarrolladora')->with('modificado', 'Registro NO modificado satisfactoriamente verifica y vuelve a intentar.');
     }
+}
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $registro = Desarrolladora::find($id);
+        if (!$registro) {
+            return redirect('/dash/desarrolladora')->with('elimiadoCorrecto', 'El registro no pudo ser elimiando posiblemente ya no existe');
+        }
+        $registro->delete();
+        //dd("Registro eliminado satisfactoria mente");
+        return redirect('/dash/desarrolladora')->with('elimiadoCorrecto', 'Registro eliminado satisfactoriamente.');
     }
 }
