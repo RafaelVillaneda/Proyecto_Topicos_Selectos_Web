@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('genero')->nullable(false);
             $table->text('descripcion')->nullable(false);
             $table->unsignedSmallInteger('ano_publicacion')->nullable(false);
-            $table->foreignIdFor(Desarrolladora::class);
-            $table->foreignIdFor(grupotraduccion::class);
+            $table->foreignIdFor(Desarrolladora::class)->nullable()->onDelete('set null');
+            $table->foreignIdFor(grupotraduccion::class)->nullable()->onDelete('set null');
             $table->timestamps();
         });
     }

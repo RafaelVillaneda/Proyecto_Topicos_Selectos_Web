@@ -4,6 +4,57 @@
 
 @section('content_header')
 <h1>Grupos de traducciones</h1>
+@if (session('errorAgregado'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+    <use xlink:href="#exclamation-triangle-fill" />
+  </svg>
+  <div>
+    <div>
+      {{ session('errorAgregado') }}
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+
+  @if (session('elimiadoCorrecto'))
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+      <use xlink:href="#exclamation-triangle-fill" />
+    </svg>
+    <div>
+      <div>
+        {{ session('elimiadoCorrecto') }}
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
+
+    @if (session('agregado'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+        <use xlink:href="#exclamation-triangle-fill" />
+      </svg>
+      <div>
+        <div>
+          {{ session('agregado') }}
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+
+      @if (session('modificado'))
+      <div class="alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+          <use xlink:href="#check-circle-fill" />
+        </svg>
+        <div>
+          {{ session('modificado') }}
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+
 @stop
 
 @section('content')
@@ -23,9 +74,13 @@
       <td>{{ $registro->id }}</td>
       <td>{{ $registro->nombre_grupo }}</td>
       <td>
+      <form method="POST" action="/traducciones/{{$registro->id}}">
+                @csrf
+                @method('DELETE')
       <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalModificar" data-id="{{$registro->id}}" data-nombre="{{$registro->nombre_grupo}}">Modificar</button>
-        <button type="button" class="btn btn-danger">Eliminar</button>
-      </td>
+      <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este registro?')">Eliminar</button>
+      </form>  
+    </td>
       <!-- Agrega más columnas según las columnas de tu tabla -->
     </tr>
     @endforeach
