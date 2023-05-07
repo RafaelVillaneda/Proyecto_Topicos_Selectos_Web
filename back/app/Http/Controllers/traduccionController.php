@@ -29,12 +29,12 @@ class traduccionController extends Controller
     public function store(Request $request)
     {
         try {
-            $desa = new grupotraduccion();
+            $trad = new grupotraduccion();
             //echo ($request->get('nombre_desa'));
-            $desa->id = null;
-            $desa->nombre_grupo = $request->get('nombre_tra');
+            $trad->id = null;
+            $trad->nombre_grupo = $request->get('nombre_tra');
 
-            $desa->save();
+            $trad->save();
             return redirect('/dash/traductores')->with('agregado', 'Registro creado satisfactoriamente.');
         } catch (\Throwable $th) {
             return redirect('/dash/traductores')->with('ErrorAgregado', 'La insercion no pudo efectuarse');
