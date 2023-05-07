@@ -135,31 +135,31 @@
                   <input type="number" required min="1950" class="form-control" name="año" id="año" placeholder="Año de publicacion">
                 </div>
 
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Desarrolladora</label>
-                  <select required id="desaSelect" class="form-control" name="desa">
-                    <option value="">Selecciona una opción</option>
-                    @foreach ($desa as $registro)
-                    <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
-                    @endforeach
-                  </select>
-                  <br><label for="exampleInputEmail1" class="form-label">Id de la desarrolladora</label>
-                  <input id="desaInput" readonly required type="text" class="form-control" name="desa" placeholder="Elige la desarrolladora">
+                <<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Desarrolladora</label>
+    <select required id="desaSelect" class="form-control" name="desa">
+        <option value="">Selecciona una opción</option>
+        @foreach ($desa as $registro)
+            <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
+        @endforeach
+    </select>
+    <br><label for="exampleInputEmail1" class="form-label">Id de la desarrolladora</label>
+    <input id="desaInput" readonly required type="text" class="form-control" name="id_desa" placeholder="Elige la desarrolladora">
+</div>
 
-                </div>
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Grupo de traduccion</label>
+    <select required id="id:traduccion" class="form-control" name="grupo_tra" onchange="updateGroupId()">
+        <option value="">Selecciona una opción</option>
+        @foreach ($traductores as $registro)
+            <option value="{{ $registro->id }}">{{ $registro->nombre_grupo }}</option>
+        @endforeach
+    </select>
+    <br>
+    <label for="exampleInputEmail1" class="form-label">Id del grupo de traductores</label>
+    <input readonly type="text" required class="form-control" name="id_grupo_tra" id="grupo_tra" min="1950" placeholder="Nombre del grupo de traduccion">
+</div>
 
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Grupo de traduccion</label>
-                  <select required id="id:traduccion" class="form-control" name="desa" onchange="updateGroupId()">
-                    <option value="">Selecciona una opción</option>
-                    @foreach ($traductores as $registro)
-                    <option value="{{ $registro->id }}">{{ $registro->nombre_grupo }}</option>
-                    @endforeach
-                  </select>
-                  <br>
-                  <label for="exampleInputEmail1" class="form-label">Id del grupo de traductores</label>
-                  <input readonly type="text" required class="form-control" name="grupo_tra" id="grupo_tra" min="1950" placeholder="Nombre del grupo de traduccion">
-                </div>
                 <button id="submitBtn" type="submit" class="btn btn-primary">Modificar Registro</button>
 
                 <div class="modal-footer">
@@ -216,10 +216,10 @@
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Grupo de traduccion</label>
-                  <select required id="grupoSelectTraduccion" class="form-control" name="grupo_tra" onchange=actualizarIdTraduccionAltas()>
+                  <select required id="grupoSelectTraduccion" class="form-control" name="grupo_tra2" onchange=actualizarIdTraduccionAltas()>
                     <option value="">Selecciona una opción</option>
-                    @foreach ($desa as $registro)
-                    <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
+                    @foreach ($traductores as $registro)
+                    <option value="{{ $registro->id }}">{{ $registro->nombre_grupo }}</option>
                     @endforeach
                   </select>
                   <br>

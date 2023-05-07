@@ -68,7 +68,14 @@ class juegos extends Controller
      */
     public function update(Request $request, string $id)
     {
-        try {
+        try {/*
+            echo($request->input('nombre') . " - ");
+            echo($request->input('genero') . " - ");
+            echo($request->input('desc') . " - ");
+            echo($request->input('año') . " - ");
+            echo($request->input('desa') . " - ");
+            echo($request->input('grupo_tra') . " - ");
+            */
             $juego = Juego::findOrFail($id);
             $juego->nombre = $request->input('nombre');
             $juego->genero = $request->input('genero');
@@ -79,7 +86,8 @@ class juegos extends Controller
             $juego->save();
             return redirect('/dash/juegos')->with('modificado', 'Registro modificado satisfactoriamente.');
         } catch (\Throwable $e) {
-            dd("Error la actualizzacion no pudo ser completada");
+            //dd($e);
+            //dd("Error la actualizzacion no pudo ser completada");
             return redirect('/dash/juegos')->with('modificado', 'Registro NO modificado satisfactoriamente.');
         }
         
