@@ -100,7 +100,7 @@
           @csrf
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre de la desarrolladora</label>
-            <input type="text" class="form-control" id="nombre_desa" name="nombre_desa" aria-describedby="emailHelp">
+            <input type="text" required pattern="[a-zA-Z ]+" class="form-control" id="nombre_desa" name="nombre_desa" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">Tenemos uno nuevo!</div>
           </div>
           <button type="submit" class="btn btn-primary">Agregar Desarrollador</button>
@@ -132,7 +132,7 @@
           </div>
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre de la desarrolladora</label>
-            <input type="text" class="form-control" id="nombre" name="nombre_desa" aria-describedby="emailHelp">
+            <input type="text" required pattern="[a-zA-Z ]+" class="form-control" id="nombre" name="nombre_desa" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">Tenemos uno nuevo!</div>
           </div>
           <button type="submit" class="btn btn-primary" id="submitBtn">Guardar cambios</button>

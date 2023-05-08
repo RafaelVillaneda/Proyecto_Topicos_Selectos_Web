@@ -21,13 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('grupotraduccion_id')->nullable();
             $table->foreign('desarrolladora_id')->references('id')->on('desarrolladora')->nullOnDelete();
             $table->foreign('grupotraduccion_id')->references('id')->on('grupotraduccions')->nullOnDelete();
-            /*
-            $table->foreignIdFor(Desarrolladora::class)->nullable()->nullOnDelete();
-            $table->foreignIdFor(grupotraduccion::class)->nullable()->nullOnDelete();
-            */
-            $table->timestamps();/*
-            $table->foreign('desarrolladora_id')->references('id')->on('desarrolladora');
-            $table->foreign('grupotraduccion_id')->references('id')->on('grupotraduccions');*/
+            $table->timestamps();
         });
     }
 
