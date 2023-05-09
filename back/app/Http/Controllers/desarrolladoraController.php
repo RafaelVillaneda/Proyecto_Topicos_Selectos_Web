@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Desarrolladora;
 use Illuminate\Http\Request;
 use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Validation\ValidationException;
 
 class desarrolladoraController extends Controller
 {
@@ -34,9 +35,19 @@ class desarrolladoraController extends Controller
             echo ($request->get('nombre_desa'));
             $desa->id = null;
             $desa->nombre_desarrolladora = $request->get('nombre_desa');
-
-            $desa->save();
-            return redirect('/dash/desarrolladora')->with('agregado', 'Registro creado satisfactoriamente.');
+            if (empty(trim( $desa->nombre_desarrolladora))){
+                return redirect('/dash/desarrolladora')->with('ErrorAgregado', 'La insercion no pudo efectuarse solo pusiste espacios');
+            }
+            try {
+                $validatedData = $request->validate([
+                    'nombre_desa' => 'required|regex:/^[a-zA-Z ]+$/'
+                ]);
+                $desa->save();
+                return redirect('/dash/desarrolladora')->with('agregado', 'Registro creado satisfactoriamente.');
+            } catch (ValidationException $e) {
+                return redirect('/dash/juegos')->with('error', 'ERROR Los datos no cumplen el formato en el que deberian ir');
+            }
+           
         } catch (\Throwable $th) {
             return redirect('/dash/desarrolladora')->with('ErrorAgregado', 'La insercion no pudo efectuarse');
         }
@@ -67,6 +78,20 @@ class desarrolladoraController extends Controller
         $id = $request->input('id');
         $desa = Desarrolladora::findOrFail($id);
         $desa->nombre_desarrolladora = $request->input('nombre_desa');
+        if (empty(trim( $desa->nombre_desarrolladora))){
+            return redirect('/dash/desarrolladora')->with('ErrorAgregado', 'La modificacion no pudo efectuarse solo pusiste espacios!');
+        }
+
+        try {
+            $validatedData = $request->validate([
+                'nombre_desa' => 'required|regex:/^[a-zA-Z ]+$/'
+            ]);
+            $desa->save();
+            return redirect('/dash/desarrolladora')->with('agregado', 'Registro creado satisfactoriamente.');
+        } catch (ValidationException $e) {
+            return redirect('/dash/juegos')->with('error', 'ERROR Los datos no cumplen el formato en el que deberian ir');
+        }
+
         $desa->save();
         return redirect('/dash/desarrolladora')->with('modificado', 'Registro modificado satisfactoriamente.');
     } catch (\Throwable $e) {

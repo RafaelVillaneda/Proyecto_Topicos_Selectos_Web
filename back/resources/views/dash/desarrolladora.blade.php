@@ -5,14 +5,14 @@
 @section('content_header')
 <h1>Desarrolladoras</h1>
 
-@if (session('errorAgregado'))
+@if (session('ErrorAgregado'))
 <div class="alert alert-danger alert-dismissible fade show" role="alert">
   <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
     <use xlink:href="#exclamation-triangle-fill" />
   </svg>
   <div>
     <div>
-      {{ session('errorAgregado') }}
+      {{ session('ErrorAgregado') }}
     </div>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
@@ -101,7 +101,7 @@
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre de la desarrolladora</label>
             <input type="text" required pattern="[a-zA-Z ]+" class="form-control" id="nombre_desa" name="nombre_desa" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Tenemos uno nuevo!</div>
+            <div id="emailHelp" class="form-text">Solo aceptamos letras y espacios</div>
           </div>
           <button type="submit" class="btn btn-primary">Agregar Desarrollador</button>
         </form>
@@ -133,7 +133,7 @@
           <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Nombre de la desarrolladora</label>
             <input type="text" required pattern="[a-zA-Z ]+" class="form-control" id="nombre" name="nombre_desa" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Tenemos uno nuevo!</div>
+            <div id="emailHelp" class="form-text">Solo aceptamos letras y espacios</div>
           </div>
           <button type="submit" class="btn btn-primary" id="submitBtn">Guardar cambios</button>
         </form>

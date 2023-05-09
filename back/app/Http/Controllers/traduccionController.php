@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\grupotraduccion;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class traduccionController extends Controller
 {
@@ -33,11 +34,21 @@ class traduccionController extends Controller
             //echo ($request->get('nombre_desa'));
             $trad->id = null;
             $trad->nombre_grupo = $request->get('nombre_tra');
-
-            $trad->save();
-            return redirect('/dash/traductores')->with('agregado', 'Registro creado satisfactoriamente.');
+            if (empty(trim( $trad->nombre_grupo))){
+                return redirect('/dash/traductores')->with('errorAgregado', 'La insercion no pudo efectuarse solo pusiste espacios');
+            }
+            try {
+                $validatedData = $request->validate([
+                    'nombre_desa' => 'required|regex:/^[a-zA-Z ]+$/'
+                ]);
+                $trad->save();
+                 return redirect('/dash/traductores')->with('agregado', 'Registro creado satisfactoriamente.');
+            } catch (ValidationException $e) {
+                return redirect('/dash/juegos')->with('errorAgregado', 'ERROR Los datos no cumplen el formato en el que deberian ir');
+            }
+            
         } catch (\Throwable $th) {
-            return redirect('/dash/traductores')->with('ErrorAgregado', 'La insercion no pudo efectuarse');
+            return redirect('/dash/traductores')->with('errorAgregado', 'La insercion no pudo efectuarse');
         }
     }
 
@@ -64,10 +75,20 @@ class traduccionController extends Controller
     {
         try {
             $id = $request->input('id');
-            $desa = grupotraduccion::findOrFail($id);
-            $desa->nombre_grupo = $request->input('nombre_tra');
-            $desa->save();
-            return redirect('/dash/traductores')->with('modificado', 'Registro modificado satisfactoriamente.');
+            $trad = grupotraduccion::findOrFail($id);
+            $trad->nombre_grupo = $request->input('nombre_tra');
+            if (empty(trim( $trad->nombre_grupo))){
+                return redirect('/dash/traductores')->with('errorAgregado', 'La modificación no pudo efectuarse solo pusiste espacios');
+            }
+            try {
+                $validatedData = $request->validate([
+                    'nombre_desa' => 'required|regex:/^[a-zA-Z ]+$/'
+                ]);
+                $trad->save();
+                return redirect('/dash/traductores')->with('modificado', 'Registro modificado satisfactoriamente.');
+            } catch (ValidationException $e) {
+                return redirect('/dash/juegos')->with('errorAgregado', 'ERROR Los datos no cumplen el formato en el que deberian ir');
+            }
         } catch (\Throwable $e) {
             return redirect('/dash/traductores')->with('modificado', 'Registro NO modificado satisfactoriamente verifica y vuelve a intentar.');
         }
