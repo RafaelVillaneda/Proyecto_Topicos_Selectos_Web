@@ -131,24 +131,28 @@
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Nombre del Juego</label>
                   <input type="text" pattern="[a-zA-Z0-9 ()]+" required name="nombre" id="nombre" placeholder="Escribe el nombre del juego" class="form-control">
+                  <div id="emailHelp" class="form-text">Solo aceptamos letras, numeros y "()"</div>
                 </div>
 
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Genero del Juego</label>
                   <input type="text" required pattern="[a-zA-Z,]+" class="form-control" name="genero" id="genero" placeholder="Escribe el genero del juego">
+                  <div id="emailHelp" class="form-text">Solo aceptamos letras y comas ,</div>
                 </div>
 
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Descripcion del juego</label>
                   <input type="text" required pattern="[a-zA-Z0-9 ()áéíóúÁÉÍÓÚüÜñÑ,.]+" class="form-control" name="desc" id="desc" placeholder="Descripcion breve del Juego">
+                  <div id="emailHelp" class="form-text">Solo aceptamos letras, numeros, puntos y comas</div>
                 </div>
 
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Año de publicacion</label>
                   <input type="number" required min="1950" class="form-control" name="año" id="año" placeholder="Año de publicacion">
+                  <div id="emailHelp" class="form-text">Solo numeros mayores a 1950</div>
                 </div>
 
-                <<div class="mb-3">
+                <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Desarrolladora</label>
                   <select required id="desaSelect" class="form-control" name="desa">
                     <option value="">Selecciona una opción</option>
@@ -156,6 +160,7 @@
                     <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
                     @endforeach
                   </select>
+                  <div id="emailHelp" class="form-text">Selecciona una desarrolladora</div>
                   <br><label for="exampleInputEmail1" class="form-label">Id de la desarrolladora</label>
                   <input id="desaInput" readonly required type="text" class="form-control" name="id_desa" placeholder="Elige la desarrolladora">
             </div>
@@ -168,6 +173,7 @@
                 <option value="{{ $registro->id }}">{{ $registro->nombre_grupo }}</option>
                 @endforeach
               </select>
+              <div id="emailHelp" class="form-text">Selecciona una grupo de traducción</div>
               <br>
               <label for="exampleInputEmail1" class="form-label">Id del grupo de traductores</label>
               <input readonly type="text" required class="form-control" name="id_grupo_tra" id="grupo_tra" min="1950" placeholder="Nombre del grupo de traduccion">
@@ -198,21 +204,25 @@
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Nombre del Juego</label>
                 <input type="text" required pattern="[a-zA-Z0-9 ()]+" class="form-control" name="nombre" placeholder="Escribe el nombre del juego">
+                <div id="emailHelp" class="form-text">Solo aceptamos letras, numeros y "()"</div>
               </div>
 
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Genero del Juego</label>
                 <input type="text" required class="form-control" pattern="[a-zA-Z,]+" name="genero" placeholder="Escribe el genero del juego">
+                <div id="emailHelp" class="form-text">Solo aceptamos letras y comas ,</div>
               </div>
 
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Descripcion del juego</label>
                 <input type="text" required class="form-control" pattern="[a-zA-Z0-9 ()áéíóúÁÉÍÓÚüÜñÑ,.]+" name="desc" placeholder="Descripcion breve del Juego">
+                <div id="emailHelp" class="form-text">Solo aceptamos letras, numeros, puntos y comas</div>
               </div>
 
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Año de publicacion</label>
                 <input type="number" required min="1950" class="form-control" name="año" placeholder="Año de publicacion">
+                <div id="emailHelp" class="form-text">Solo numeros mayores a 1950</div>
               </div>
 
               <div class="mb-3">
@@ -223,6 +233,7 @@
                   <option value="{{ $registro->id }}">{{ $registro->nombre_desarrolladora }}</option>
                   @endforeach
                 </select>
+                <div id="emailHelp" class="form-text">Selecciona una desarrolladora</div>
                 <br><label for="exampleInputEmail1" class="form-label">Id de la desarrolladora</label>
                 <input id="grupo_desa_altas" readonly required type="text" class="form-control" name="desa" placeholder="Elige la desarrolladora">
 
@@ -235,6 +246,7 @@
                   <option value="{{ $registro->id }}">{{ $registro->nombre_grupo }}</option>
                   @endforeach
                 </select>
+                <div id="emailHelp" class="form-text">Selecciona un grupo de traducción</div>
                 <br>
                 <label for="exampleInputEmail1" class="form-label">Id del grupo de traductores</label>
                 <input readonly type="text" required class="form-control" name="grupo_tra" id="grupo_traAltas" placeholder="Id del grupo de traductores">
