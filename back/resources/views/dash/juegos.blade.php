@@ -17,6 +17,19 @@
   </div>
   @endif
 
+  @if (session('error'))
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+    <use xlink:href="#exclamation-triangle-fill" />
+  </svg>
+  <div>
+    <div>
+      {{ session('error') }}
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+
   @if (session('elimiadoCorrecto'))
   <div class="alert alert-danger alert-dismissible fade show" role="alert">
     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
