@@ -54,7 +54,13 @@
                 <x-button class="ml-4">
                     {{ __('Registrarse') }}
                 </x-button>
+                
             </div>
+            <div class="flex items-center justify-end mt-4">
+                {!! app('captcha')->display(['add-js' => false]) !!}
+            </div>
+            
         </form>
+        {!! app('captcha')->displayJs() !!}
     </x-authentication-card>
 </x-guest-layout>
