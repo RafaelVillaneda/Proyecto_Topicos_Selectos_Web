@@ -39,7 +39,7 @@ class traduccionController extends Controller
             }
             try {
                 $validatedData = $request->validate([
-                    'nombre_desa' => 'required|regex:/^[a-zA-Z ]+$/'
+                    'nombre_tra' => 'required|regex:/^[a-zA-Z ]+$/'
                 ]);
                 $trad->save();
                  return redirect('/dash/traductores')->with('agregado', 'Registro creado satisfactoriamente.');
@@ -82,12 +82,12 @@ class traduccionController extends Controller
             }
             try {
                 $validatedData = $request->validate([
-                    'nombre_desa' => 'required|regex:/^[a-zA-Z ]+$/'
+                    'nombre_tra' => 'required|regex:/^[a-zA-Z ]+$/'
                 ]);
                 $trad->save();
                 return redirect('/dash/traductores')->with('modificado', 'Registro modificado satisfactoriamente.');
             } catch (ValidationException $e) {
-                return redirect('/dash/juegos')->with('errorAgregado', 'ERROR Los datos no cumplen el formato en el que deberian ir');
+                return redirect('/dash/traductores')->with('errorAgregado', 'ERROR Los datos no cumplen el formato en el que deberian ir');
             }
         } catch (\Throwable $e) {
             return redirect('/dash/traductores')->with('modificado', 'Registro NO modificado satisfactoriamente verifica y vuelve a intentar.');
