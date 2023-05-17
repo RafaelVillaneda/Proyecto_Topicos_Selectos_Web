@@ -79,7 +79,7 @@
                 @method('DELETE')
                 <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalModificar" data-id="{{$registro->id}}" data-nombre="{{$registro->nombre_desarrolladora}}">Modificar</button>
                 <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de que quieres eliminar este registro?')">Eliminar</button>
-              </form>
+          </form>
       </td>
       <!-- Agrega más columnas según las columnas de tu tabla -->
     </tr>
