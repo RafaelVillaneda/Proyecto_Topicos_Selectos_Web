@@ -27,39 +27,41 @@ class juegos extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    $juego = new Juego();
-    $juego->id = null;
-    $juego->nombre = $request->get('nombre');
-    $juego->genero = $request->get('genero');
-    $juego->descripcion = $request->get('desc');
-    $juego->ano_publicacion = $request->get('año');
-    $juego->desarrolladora_id = $request->get('desa');
-    $juego->grupotraduccion_id = $request->get('grupo_tra');
+    {
+        $juego = new Juego();
+        $juego->id = null;
+        $juego->nombre = $request->get('nombre');
+        $juego->genero = $request->get('genero');
+        $juego->descripcion = $request->get('desc');
+        $juego->ano_publicacion = $request->get('año');
+        $juego->desarrolladora_id = $request->get('desa');
+        $juego->grupotraduccion_id = $request->get('grupo_tra');
 
-    if (empty(trim($juego->nombre))
-        || empty(trim($juego->genero))
-        || empty(trim($juego->descripcion))) {
-        return redirect()->back()->with(['error' => 'Error: Los datos no cumplen el formato en el que deberían ir']);
-    } else {
-        try {
-            $validatedData = $request->validate([
-                'nombre' => 'required|regex:/^[a-zA-Z0-9 ]+$/',
-                'genero' => 'required|regex:/^[a-zA-Z]+(?:,[a-zA-Z]+)*$/',
-                'desc' => 'required|regex:/^[a-zA-Z0-9 ()áéíóúÁÉÍÓÚüÜñÑ,.]+$/',
-                'año' => 'required|regex:/^[0-9]+$/',
-                'desa' => 'required|regex:/^[0-9]+$/',
-                'grupo_tra' => 'required|regex:/^[0-9]+$/'
-            ]);
-            $juego->save();
-            return redirect('/dash/juegos')->with('agregado', 'Registro creado satisfactoriamente.');
-        } catch (ValidationException $e) {
-            return redirect('/dash/juegos')->with('error', 'Error: Los datos no cumplen el formato en el que deberían ir');
+        if (
+            empty(trim($juego->nombre))
+            || empty(trim($juego->genero))
+            || empty(trim($juego->descripcion))
+        ) {
+            return redirect()->back()->with(['error' => 'Error: Los datos no cumplen el formato en el que deberían ir']);
+        } else {
+            try {
+                $validatedData = $request->validate([
+                    'nombre' => 'required|regex:/^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ ]+$/',
+                    'genero' => 'required|regex:/^[a-zA-Z]+(?:,[a-zA-Z]+)*$/',
+                    'desc' => 'required|regex:/^[a-zA-Z0-9 ()áéíóúÁÉÍÓÚüÜñÑ,.]+$/',
+                    'año' => 'required|regex:/^[0-9]+$/',
+                    'desa' => 'required|regex:/^[0-9]+$/',
+                    'grupo_tra' => 'required|regex:/^[0-9]+$/'
+                ]);
+                $juego->save();
+                return redirect('/dash/juegos')->with('agregado', 'Registro creado satisfactoriamente.');
+            } catch (ValidationException $e) {
+                return redirect('/dash/juegos')->with('error', 'Error: Los datos no cumplen el formato en el que deberían ir');
+            }
         }
     }
-}
 
-    
+
 
     /**
      * Display the specified resource.
@@ -100,8 +102,8 @@ class juegos extends Controller
                 $juego->ano_publicacion || $juego->desarrolladora_id || $juego->grupotraduccion_id)) {
                 try {
                     $validatedData = $request->validate([
-                        'nombre' => 'required|regex:/^[a-zA-Z0-9 ()]+$/',
-                        'genero' => 'required|regex:/^[a-zA-Z,]+$/',
+                        'nombre' => 'required|regex:/^[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ ]+$/',
+                        'genero' => 'required|regex:/^[a-zA-Z]+(?:,[a-zA-Z]+)*$/',
                         'desc' => 'required|regex:/^[a-zA-Z0-9 ()áéíóúÁÉÍÓÚüÜñÑ,.]+$/',
                         'año' => 'required|regex:/^[0-9]+$/',
                         'desa' => 'required|regex:/^[0-9]+$/',

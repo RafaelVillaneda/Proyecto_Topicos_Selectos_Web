@@ -131,7 +131,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nombre del Juego</label>
-                    <input type="text" pattern="[a-zA-Z0-9 ]+" required name="nombre" id="nombre" placeholder="Escribe el nombre del juego" class="form-control">
+                    <input type="text" pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ ]+" required name="nombre" id="nombre" placeholder="Escribe el nombre del juego" class="form-control">
                     <div id="emailHelp" class="form-text">Solo aceptamos letras, numeros y espacios</div>
                   </div>
 
@@ -204,7 +204,7 @@
                   @csrf
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Nombre del Juego</label>
-                    <input type="text" required pattern="[a-zA-Z0-9][a-zA-Z0-9 ]*" class="form-control" name="nombre" placeholder="Escribe el nombre del juego">
+                    <input type="text" required pattern="[a-zA-Z0-9áéíóúÁÉÍÓÚüÜñÑ ]+" class="form-control" name="nombre" placeholder="Escribe el nombre del juego">
                     <div id="emailHelp" class="form-text">Solo aceptamos letras, numeros y espacios</div>
                   </div>
 
