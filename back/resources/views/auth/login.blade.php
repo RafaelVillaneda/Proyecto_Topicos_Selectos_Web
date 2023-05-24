@@ -26,12 +26,12 @@
 
                                 <div>
                                     <label for="email" value="{{ __('Email') }}">Correo</label>
-                                    <input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                                    <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
                                 </div>
 
                                 <div class="mt-4">
                                     <label for="password" value="{{ __('Password') }}" >Contraseña</label>
-                                    <input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                                    <input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
                                 </div>
 
 
