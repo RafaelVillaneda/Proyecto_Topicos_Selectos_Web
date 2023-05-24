@@ -303,13 +303,7 @@ return [
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        ['header' => 'Ajustes de cuenta'],
-        [
-            'text' => 'Perfil',
-            'url'  => '/user/profile',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        ['header' => 'Paneles'],
+        ['header' => 'Acciones'],
         [
             'text'       => 'Juegos Publicados',
             'icon_color' => 'red',
